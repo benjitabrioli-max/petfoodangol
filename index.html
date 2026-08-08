@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PetFoodAngol | Alimento para perros, gatos, palta y huevos</title>
+<style>
+  :root{
+    --brown-900:#3d2b1f;
+    --brown-700:#6b4a30;
+    --brown-500:#a9714b;
+    --cream:#fbf3e7;
+    --cream-2:#f3e4cc;
+    --green:#5c7a4a;
+    --green-light:#e7efdd;
+    --yellow:#e0a52c;
+    --yellow-light:#fbecc9;
+    --purple:#8e3b7a;
+    --teal:#2b8a8a;
+    --blue:#3a6ea5;
+    --indigo:#6a5c9e;
+    --pink:#c0567a;
+    --white:#ffffff;
+    --text:#3a2f27;
+    --radius:16px;
+    --shadow:0 6px 20px rgba(61,43,31,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', Verdana, Arial, sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.5;
+  }
+  a{color:inherit;}
+
+  header{
+    background:linear-gradient(135deg, var(--brown-900), var(--brown-700));
+    color:var(--cream);
+    padding:2.5rem 1.5rem 3.5rem;
+    text-align:center;
+  }
+  header .logo{
+    font-size:2.4rem;
+    font-weight:800;
+    letter-spacing:0.5px;
+  }
+  header .logo span{color:var(--yellow);}
+  header p.tagline{
+    margin-top:0.4rem;
+    font-size:1.05rem;
+    color:var(--cream-2);
+  }
+
+  .contact-bar{
+    max-width:960px;
+    margin:-2.2rem auto 0;
+    background:var(--white);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:1.2rem 1.5rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .contact-item{
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    font-size:0.98rem;
+  }
+  .contact-item .icon{
+    font-size:1.3rem;
+  }
+  .call-btn{
+    background:var(--green);
+    color:var(--white);
+    text-decoration:none;
+    font-weight:700;
+    padding:0.75rem 1.4rem;
+    border-radius:999px;
+    box-shadow:0 4px 10px rgba(92,122,74,0.35);
+    white-space:nowrap;
+  }
+  .call-btn:hover{background:#4a6339;}
+
+  .notice{
+    max-width:960px;
+    margin:1.6rem auto 0;
+    padding:0.9rem 1.3rem;
+    background:var(--yellow-light);
+    border-left:4px solid var(--yellow);
+    border-radius:10px;
+    font-size:0.92rem;
+    color:var(--brown-900);
+  }
+
+  .quick-nav{
+    max-width:960px;
+    margin:1.2rem auto 0;
+    padding:0 1.5rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  .quick-nav-inner{
+    display:flex;
+    flex-direction:column;
+    gap:0.6rem;
+    background:rgba(251,243,231,0.95);
+    backdrop-filter:blur(4px);
+    padding:0.6rem;
+    border-radius:12px;
+    width:100%;
+  }
+  .quick-nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+  .search-box{
+    position:relative;
+  }
+  .search-box input{
+    width:100%;
+    padding:0.7rem 2.4rem 0.7rem 2.2rem;
+    border-radius:999px;
+    border:1px solid var(--cream-2);
+    font-size:0.95rem;
+    font-family:inherit;
+    background:var(--white);
+    color:var(--text);
+  }
+  .search-box input:focus{
+    outline:2px solid var(--brown-500);
+    outline-offset:1px;
+  }
+  .search-box .search-icon{
+    position:absolute;
+    left:0.8rem;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:0.95rem;
+    color:#8a7a6b;
+    pointer-events:none;
+  }
+  .search-box .clear-btn{
+    position:absolute;
+    right:0.5rem;
+    top:50%;
+    transform:translateY(-50%);
+    background:none;
+    border:none;
+    font-size:1.2rem;
+    color:#8a7a6b;
+    cursor:pointer;
+    display:none;
+    line-height:1;
+    padding:0.3rem 0.5rem;
+  }
+  .no-results{
+    text-align:center;
+    padding:3rem 1rem;
+    color:#8a7a6b;
+    font-size:1rem;
+    display:none;
+  }
+  .quick-nav a{
+    text-decoration:none;
+    font-size:0.85rem;
+    font-weight:700;
+    color:var(--brown-900);
+    background:var(--white);
+    padding:0.45rem 0.9rem;
+    border-radius:999px;
+    box-shadow:0 2px 6px rgba(61,43,31,0.1);
+    white-space:nowrap;
+  }
+  .quick-nav a:hover{background:var(--cream-2);}
+
+  main{
+    max-width:1000px;
+    margin:0 auto;
+    padding:2rem 1.5rem 4rem;
+  }
+
+  .section-title{
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    font-size:1.6rem;
+    font-weight:800;
+    margin:3.2rem 0 0.4rem;
+    color:var(--brown-900);
+    scroll-margin-top:5rem;
+  }
+  .section-title.first{margin-top:0;}
+  .section-title .emoji{font-size:1.8rem;}
+
+  .sub-title{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--brown-700);
+    margin:1.6rem 0 0.8rem;
+    padding-bottom:0.3rem;
+    border-bottom:2px solid var(--cream-2);
+  }
+
+  .products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:1.1rem;
+  }
+  .card{
+    background:var(--white);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:1.3rem;
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+    border-top:5px solid var(--brown-500);
+    position:relative;
+  }
+  .card.gatos{border-top-color:var(--purple);}
+  .card.antiparasitarios{border-top-color:var(--teal);}
+  .card.higiene{border-top-color:var(--blue);}
+  .card.accesorios{border-top-color:var(--green);}
+  .card.hogar{border-top-color:var(--indigo);}
+  .card.snacks{border-top-color:var(--pink);}
+  .card.humedo{border-top-color:#c98a3e;}
+  .card.palta{border-top-color:var(--green);}
+  .card.huevos{border-top-color:var(--yellow);}
+
+  .card .name{
+    font-weight:700;
+    font-size:1.03rem;
+  }
+  .type-badge{
+    display:inline-block;
+    font-size:0.65rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    color:#fff;
+    background:var(--brown-500);
+    padding:0.15rem 0.5rem;
+    border-radius:6px;
+    margin-left:0.4rem;
+    vertical-align:middle;
+  }
+  .card.gatos .type-badge{background:var(--purple);}
+  .card.humedo .type-badge{background:#c98a3e;}
+  .card .desc{
+    font-size:0.87rem;
+    color:#6b5d51;
+    min-height:1.1em;
+  }
+  .card .extra{
+    font-size:0.82rem;
+    color:#8a7a6b;
+  }
+  .card .price-row{
+    margin-top:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding-top:0.6rem;
+    border-top:1px dashed #e3d7c7;
+  }
+  .card .price{
+    font-size:1.25rem;
+    font-weight:800;
+    color:var(--brown-900);
+  }
+  .card.gatos .price{color:var(--purple);}
+  .card.antiparasitarios .price{color:var(--teal);}
+  .card.higiene .price{color:var(--blue);}
+  .card.accesorios .price{color:var(--green);}
+  .card.hogar .price{color:var(--indigo);}
+  .card.snacks .price{color:var(--pink);}
+  .card.humedo .price{color:#a5691f;}
+  .card.palta .price{color:var(--green);}
+  .card.huevos .price{color:#a97a1c;}
+
+  .card .old-price{
+    font-size:0.85rem;
+    color:#b3a596;
+    text-decoration:line-through;
+    margin-right:0.4rem;
+    font-weight:600;
+  }
+  .card .unit{
+    font-size:0.82rem;
+    color:#8a7a6b;
+  }
+  .oferta-badge{
+    position:absolute;
+    top:-10px;
+    right:14px;
+    background:#c0392b;
+    color:#fff;
+    font-size:0.7rem;
+    font-weight:800;
+    padding:0.25rem 0.6rem;
+    border-radius:999px;
+    box-shadow:0 3px 8px rgba(192,57,43,0.4);
+  }
+  .tbd{
+    font-size:1rem;
+    font-weight:700;
+    color:#b08a3e;
+    background:var(--yellow-light);
+    padding:0.15rem 0.6rem;
+    border-radius:999px;
+  }
+
+  footer{
+    background:var(--brown-900);
+    color:var(--cream-2);
+    text-align:center;
+    padding:2rem 1.5rem;
+    font-size:0.9rem;
+  }
+  footer .foot-phone{
+    display:block;
+    margin-top:0.4rem;
+    font-weight:700;
+    color:var(--yellow);
+    text-decoration:none;
+    font-size:1.05rem;
+  }
+
+  @media (max-width:600px){
+    header .logo{font-size:1.9rem;}
+    .contact-bar{flex-direction:column;align-items:stretch;text-align:center;}
+    .call-btn{text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">PetFood<span>Angol</span></div>
+  <p class="tagline">Alimento para perros y gatos · Palta · Huevos frescos</p>
+</header>
+
+<div class="contact-bar">
+  <div class="contact-item">
+    <span class="icon">📍</span>
+    <span>Argentina 1916</span>
+  </div>
+  <div class="contact-item">
+    <span class="icon">📞</span>
+    <span>90957472</span>
+  </div>
+  <div class="contact-item">
+    <span class="icon">🛵</span>
+    <span>Despacho a domicilio en todo Angol</span>
+  </div>
+  <a class="call-btn" href="tel:90957472">Llamar para pedir</a>
+</div>
+
+<div class="notice">
+  Esta página muestra precios de referencia. <strong>No se realizan compras online</strong> -
+  para pedir o retirar tu producto comunícate al
+  <strong><a href="tel:90957472">90957472</a></strong>.
+</div>
+
+<nav class="quick-nav">
+  <div class="quick-nav-inner">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Buscar producto o marca... (ej: fit fórmula)" autocomplete="off">
+      <button type="button" class="clear-btn" id="clearSearch" aria-label="Limpiar búsqueda">✕</button>
+    </div>
+    <div class="quick-nav-links">
+      <a href="#perros">🐶 Perros</a>
+      <a href="#gatos">🐱 Gatos</a>
+      <a href="#humedo">🥫 Sobres y latas</a>
+      <a href="#snacks">🍬 Snacks</a>
+      <a href="#antiparasitarios">💊 Antiparasitarios</a>
+      <a href="#higiene">🧴 Higiene</a>
+      <a href="#accesorios">🍽️ Accesorios</a>
+      <a href="#hogar">🏠 Hogar</a>
+      <a href="#palta">🥑 Palta</a>
+      <a href="#huevos">🥚 Huevos</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <p class="no-results" id="noResults">No encontramos productos que coincidan con tu búsqueda. Prueba con otra palabra o llama al <a href="tel:90957472">90957472</a>.</p>
+
+  <h2 class="section-title first" id="perros"><span class="emoji">🐶</span> Alimento seco para perros</h2>
+
+  <h3 class="sub-title">Master Dog 18kg</h3>
+  <div class="products">
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Master Dog Cachorro 18kg</div>
+      <div class="desc">Todas las razas</div>
+      <div class="extra">Granel: $2.100 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Master Dog Adulto 18kg</div>
+      <div class="desc">Razas pequeñas</div>
+      <div class="extra">Granel: $2.100 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Master Dog Adulto 18kg</div>
+      <div class="desc">Sabor Pollo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Master Dog Senior 18kg</div>
+      <div class="desc">Sabor Carne</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Master Dog 8kg</h3>
+  <div class="products">
+    <div class="card">
+      <div class="name">Master Dog Cachorro 8kg</div>
+      <div class="desc">Razas pequeñas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 8kg</span>
+        <span class="price">$17.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Master Dog Adulto 8kg</div>
+      <div class="desc">Razas pequeñas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 8kg</span>
+        <span class="price">$17.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Master Dog Senior 8kg</div>
+      <div class="desc">Sabor Carne</div>
+      <div class="price-row">
+        <span class="unit">bolsa 8kg</span>
+        <span class="price">$17.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Champion Dog 18kg</h3>
+  <div class="products">
+    <div class="card">
+      <div class="name">Champion Dog Cachorro 18kg</div>
+      <div class="desc">Carne y Pollo · + lata de regalo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span class="price">$30.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Champion Dog Adulto Razas Pequeñas 18kg</div>
+      <div class="desc">Carne y Pollo · + lata de regalo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span class="price">$30.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Champion Dog Adulto 18kg</div>
+      <div class="desc">Salmón y Pollo · + lata de regalo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span class="price">$30.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Champion Dog Adulto 18kg</div>
+      <div class="desc">Carne y Pollo · + lata de regalo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span class="price">$30.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Champion Dog Senior 18kg</div>
+      <div class="desc">Carne y Pollo · + lata de regalo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 18kg</span>
+        <span class="price">$30.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Fit Fórmula</h3>
+  <div class="products">
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Fit Fórmula Cachorro 10kg</div>
+      <div class="extra">Granel: $2.700 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span><span class="old-price">$26.000</span><span class="price">$24.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Fit Fórmula R/P 10kg</div>
+      <div class="desc">Razas pequeñas</div>
+      <div class="extra">Granel: $2.600 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span><span class="old-price">$25.000</span><span class="price">$23.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Fit Fórmula Adulto 20kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$43.000</span><span class="price">$38.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Fit Fórmula Senior 10kg</div>
+      <div class="desc">Razas pequeñas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$27.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Fit Fórmula Senior 20kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$46.000</span><span class="price">$43.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Nomade</h3>
+  <div class="products">
+    <div class="card">
+      <div class="name">Nomade Senior 15kg</div>
+      <div class="desc">Razas medianas y grandes</div>
+      <div class="price-row">
+        <span class="unit">bolsa 15kg</span>
+        <span class="price">$32.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Nomade Adulto 20kg</div>
+      <div class="desc">Razas mediana y grande</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span class="price">$36.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Nomade Cachorro 10kg</div>
+      <div class="desc">Todas las razas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$22.500</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Cachupín y Sabrokan 25kg</h3>
+  <div class="products">
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Cachupín Cachorro 25kg</div>
+      <div class="desc">Carne y Leche</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Cachupín Adulto 25kg</div>
+      <div class="desc">Granel: $1.400 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Sabrokán Adulto 25kg</div>
+      <div class="desc">Sabor Carne</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span><span class="old-price">$31.500</span><span class="price">$30.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">XT21 / XT25</h3>
+  <div class="products">
+    <div class="card">
+      <div class="name">XT-25 Cachorro 10kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$16.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">XT21 Adulto 10kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$15.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">XT21 Adulto 25kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span class="price">$32.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Strong y Tyson</h3>
+  <div class="products">
+    <div class="card">
+      <div class="name">Strong Adulto 25kg</div>
+      <div class="desc">Perro adulto</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span class="price">$38.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Tyson Adulto 25kg</div>
+      <div class="desc">Oferta válida hasta 16/08</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span><span class="old-price">$26.000</span><span class="price">$25.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Bokato</h3>
+  <div class="products">
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Bokato Cachorro 10kg</div>
+      <div class="desc">Todas las razas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span><span class="old-price">$31.700</span><span class="price">$27.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Bokato Petit 10kg</div>
+      <div class="desc">Súper Premium · razas pequeñas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span><span class="old-price">$34.500</span><span class="price">$29.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Bokato Senior 7kg</div>
+      <div class="desc">Súper Premium · razas pequeñas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 7kg</span>
+        <span><span class="old-price">$29.900</span><span class="price">$27.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Bokato Senior 12kg</div>
+      <div class="desc">Súper Premium · razas mediana y grande</div>
+      <div class="price-row">
+        <span class="unit">bolsa 12kg</span>
+        <span><span class="old-price">$49.500</span><span class="price">$44.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Bokato Adulto Tradición 20kg</div>
+      <div class="desc">Razas mediana y grande premium</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$54.900</span><span class="price">$47.000</span></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Bokato Gold 20kg</div>
+      <div class="desc">Súper Premium</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$58.900</span><span class="price">$51.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="gatos"><span class="emoji">🐱</span> Alimento seco para gatos</h2>
+
+  <h3 class="sub-title">Whiskas 10kg</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="name">Whiskas Gatito 10kg</div>
+      <div class="desc">Sabor Carne y Leche · 2-12 meses</div>
+      <div class="extra">Granel: $2.900 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$28.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Whiskas Adulto 10kg</div>
+      <div class="desc">Sabor Pollo · 1+ años</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$28.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Whiskas Adulto 10kg</div>
+      <div class="desc">Sabor Carne · 1+ años</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$28.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Whiskas Adulto 10kg</div>
+      <div class="desc">Sabor Pescado · 1+ años</div>
+      <div class="extra">Granel: $2.900 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$28.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Cat Chow 19,5kg</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="name">Cat Chow Gatito 19,5kg</div>
+      <div class="desc">Granel: $3.900 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 19,5kg</span>
+        <span class="price">$65.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Cat Chow Adulto 19,5kg</div>
+      <div class="desc">Gato esterilizados</div>
+      <div class="extra">Granel: $3.900 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 19,5kg</span>
+        <span class="price">$65.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Cat Chow Adulto 19,5kg</div>
+      <div class="desc">Delimix</div>
+      <div class="extra">Granel: $3.900 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 19,5kg</span>
+        <span class="price">$65.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Cat Chow Adulto 19,5kg</div>
+      <div class="desc">Pescado</div>
+      <div class="extra">Granel: $3.900 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 19,5kg</span>
+        <span class="price">$65.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Master Cat 20kg</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Master Cat Adulto 20kg</div>
+      <div class="desc">Sabor Carne</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$44.000</span><span class="price">$42.000</span></span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Master Cat Adulto Mix Gourmet 20kg</div>
+      <div class="desc">Sabor Salmón, Carne y Pollo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$44.000</span><span class="price">$42.000</span></span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Master Cat Adulto 20kg</div>
+      <div class="desc">Sabor Salmón</div>
+      <div class="extra">Granel: $2.500 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$44.000</span><span class="price">$42.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Champion Cat 20kg</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="name">Champion Cat Gatito 20kg</div>
+      <div class="desc">Pollo y Leche</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span class="price">$42.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Champion Cat Adulto 20kg</div>
+      <div class="desc">Pescado</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span class="price">$42.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Champion Cat Adulto 20kg</div>
+      <div class="desc">Pollo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span class="price">$42.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Champion Cat Adulto 20kg</div>
+      <div class="desc">Carne</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span class="price">$42.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Bokato Gato</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Bokato Gato 7kg</div>
+      <div class="desc">Súper Premium</div>
+      <div class="price-row">
+        <span class="unit">bolsa 7kg</span>
+        <span><span class="old-price">$38.100</span><span class="price">$34.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Masko</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="name">Masko Gato 10kg</div>
+      <div class="desc">Gatito y Adulto</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$16.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="name">Masko Adulto 25kg</div>
+      <div class="desc">Carne y Cereales</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span class="price">$30.000</span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="name">Masko Gato 25kg</div>
+      <div class="desc">Gatito y Adulto</div>
+      <div class="price-row">
+        <span class="unit">bolsa 25kg</span>
+        <span class="price">$35.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Fit Fórmula Gato</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="name">Fit Fórmula Gato 10kg</div>
+      <div class="extra">Granel: $2.900 x kilo</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$27.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Nomade Gato</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="name">Nomade Gato 10kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span class="price">$27.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Royal Canin 1,5kg</h3>
+  <div class="products">
+    <div class="card gatos">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Royal Canin Urinary S/O 1,5kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 1,5kg</span>
+        <span><span class="old-price">$21.500</span><span class="price">$19.500</span></span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Royal Canin Gato Urinary Care 1,5kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 1,5kg</span>
+        <span><span class="old-price">$21.500</span><span class="price">$19.500</span></span>
+      </div>
+    </div>
+    <div class="card gatos">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Royal Canin Indoor 1,5kg</div>
+      <div class="price-row">
+        <span class="unit">bolsa 1,5kg</span>
+        <span><span class="old-price">$19.500</span><span class="price">$16.500</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="humedo"><span class="emoji">🥫</span> Alimento húmedo: sobres y latas</h2>
+
+  <h3 class="sub-title">Whiskas Pouch <span class="type-badge">Sobre 85g</span></h3>
+  <div class="products">
+    <div class="card gatos humedo">
+      <div class="name">Whiskas Gatito Carne<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card gatos humedo">
+      <div class="name">Whiskas Adulto Pavo<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card gatos humedo">
+      <div class="name">Whiskas Adulto Pollo<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card gatos humedo">
+      <div class="name">Whiskas Adulto Sardina<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card gatos humedo">
+      <div class="name">Whiskas Adulto Carne<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card gatos humedo">
+      <div class="name">Whiskas Adulto Salmón<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Pedigree Pouch <span class="type-badge">Sobre</span></h3>
+  <div class="products">
+    <div class="card humedo">
+      <div class="name">Pedigree Cachorro Carne<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card humedo">
+      <div class="name">Pedigree Adulto R/P Pollo<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card humedo">
+      <div class="name">Pedigree Adulto R/P Carne<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card humedo">
+      <div class="name">Pedigree Adulto Pollo<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card humedo">
+      <div class="name">Pedigree Adulto Carne<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+    <div class="card humedo">
+      <div class="name">Pedigree Senior Carne<span class="type-badge">Sobre</span></div>
+      <div class="desc">Display 12 unidades</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span class="price">$7.200</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Latas Champion 315g <span class="type-badge">Lata</span></h3>
+  <div class="products">
+    <div class="card gatos humedo">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Lata Champion Cat 315g<span class="type-badge">Lata</span></div>
+      <div class="desc">Sabor Pescado</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
+      </div>
+    </div>
+    <div class="card humedo">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Lata Champion Dog 315g<span class="type-badge">Lata</span></div>
+      <div class="desc">Adulto Carne</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
+      </div>
+    </div>
+    <div class="card humedo">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Lata Champion Dog 315g<span class="type-badge">Lata</span></div>
+      <div class="desc">Cachorro Pollo</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Lata Fit Fórmula Gato Gourmet 80g <span class="type-badge">Lata</span></h3>
+  <div class="products">
+    <div class="card gatos humedo">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Fit Fórmula Gato Gourmet<span class="type-badge">Lata</span></div>
+      <div class="desc">Atún y camarón</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
+      </div>
+    </div>
+    <div class="card gatos humedo">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Fit Fórmula Gato Gourmet<span class="type-badge">Lata</span></div>
+      <div class="desc">Atún y palitos de cangrejo</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="snacks"><span class="emoji">🍬</span> Snacks y premios</h2>
+
+  <h3 class="sub-title">Snack Fit Fórmula 400g</h3>
+  <div class="products">
+    <div class="card snacks">
+      <div class="name">Snack Fit Fórmula</div>
+      <div class="desc">Salchicha de pato</div>
+      <div class="price-row">
+        <span class="unit">400g</span>
+        <span class="price">$10.000</span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="name">Snack Fit Fórmula</div>
+      <div class="desc">Trutro de pollo</div>
+      <div class="price-row">
+        <span class="unit">400g</span>
+        <span class="price">$10.000</span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="name">Snack Fit Fórmula</div>
+      <div class="desc">Espiral de salmón</div>
+      <div class="price-row">
+        <span class="unit">400g</span>
+        <span class="price">$10.000</span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="name">Snack Fit Fórmula</div>
+      <div class="desc">Costillitas de cordero</div>
+      <div class="price-row">
+        <span class="unit">400g</span>
+        <span class="price">$10.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Otros snacks</h3>
+  <div class="products">
+    <div class="card snacks">
+      <div class="name">Dentastix</div>
+      <div class="desc">Razas grandes · 7 unidades</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span class="price">$3.000</span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Snack Animal Planet</div>
+      <div class="desc">Trozos de salmón con pollo · 65g</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$2.990</span><span class="price">$2.500</span></span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Snack Animal Planet</div>
+      <div class="desc">Trozos de vacuno con pollo · 100g</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$2.990</span><span class="price">$2.500</span></span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="name">Snack Fémur de Cerdo</div>
+      <div class="desc">Wild Bites</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$3.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Churu (perro y gato) <span class="type-badge">Display 4un</span></h3>
+  <div class="products">
+    <div class="card snacks">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Churu Atún con Almeja</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Churu Atún con Camarón</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Churu Pollo con Salmón</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Churu Pollo con Atún</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
+      </div>
+    </div>
+    <div class="card snacks">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Churu Pollo</div>
+      <div class="price-row">
+        <span class="unit">c/u</span>
+        <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="antiparasitarios"><span class="emoji">💊</span> Antiparasitarios</h2>
+
+  <h3 class="sub-title">Nexgard Perros</h3>
+  <div class="products">
+    <div class="card antiparasitarios">
+      <div class="name">Nexgard 2 - 4kg</div>
+      <div class="desc">3 comprimidos</div>
+      <div class="price-row">
+        <span class="unit">caja</span>
+        <span class="price">$19.000</span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Nexgard 4 - 10kg</div>
+      <div class="desc">3 comprimidos</div>
+      <div class="price-row">
+        <span class="unit">caja</span>
+        <span class="price">$21.000</span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Nexgard 10 - 25kg</div>
+      <div class="desc">3 comprimidos</div>
+      <div class="price-row">
+        <span class="unit">caja</span>
+        <span class="price">$23.000</span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Nexgard 25 - 50kg</div>
+      <div class="desc">3 comprimidos</div>
+      <div class="price-row">
+        <span class="unit">caja</span>
+        <span class="price">$33.000</span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Pipeta Sinpul 2ml</div>
+      <div class="desc">Elimina pulgas y garrapatas</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$3.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Pipetas Gato</h3>
+  <div class="products">
+    <div class="card antiparasitarios">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Pipeta Gato Fiprodrag</div>
+      <div class="desc">Antiparasitario externo</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$7.000</span><span class="price">$5.000</span></span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Nexgard Combo Pipeta Gato</div>
+      <div class="desc">Antiparasitario interno y externo · 2,5-7,5kg</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$15.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Collares y shampoo antipulgas</h3>
+  <div class="products">
+    <div class="card antiparasitarios">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Collar Gato Sinpulkill</div>
+      <div class="desc">Controla pulgas x 4 meses</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$8.000</span><span class="price">$7.500</span></span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Collar Perro Sinpulkill</div>
+      <div class="desc">Pulgas x 4 meses · garrapatas x 3 meses</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$8.000</span><span class="price">$7.500</span></span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Shampoo Dorazel Plus 300ml</div>
+      <div class="desc">Elimina pulgas y garrapatas</div>
+      <div class="price-row">
+        <span class="unit">frasco</span>
+        <span class="price">$5.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Antiparasitario Interno</h3>
+  <div class="products">
+    <div class="card antiparasitarios">
+      <div class="name">Mebermic Comprimido</div>
+      <div class="desc">Antiparasitario interno · hasta 10kg</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$1.200</span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Invermic Gato Gotas 10ml</div>
+      <div class="desc">Antiparasitario interno</div>
+      <div class="price-row">
+        <span class="unit">frasco</span>
+        <span class="price">$2.500</span>
+      </div>
+    </div>
+    <div class="card antiparasitarios">
+      <div class="name">Invermic Perro Gotas 10ml</div>
+      <div class="desc">Antiparasitario interno</div>
+      <div class="price-row">
+        <span class="unit">frasco</span>
+        <span class="price">$2.500</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="higiene"><span class="emoji">🧴</span> Higiene y aseo</h2>
+
+  <h3 class="sub-title">Shampoo Canish y Tidy</h3>
+  <div class="products">
+    <div class="card higiene">
+      <div class="name">Shampoo Hipoalergénico 390ml</div>
+      <div class="price-row">
+        <span class="unit">frasco</span>
+        <span class="price">$4.000</span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="name">Shampoo Extra Brillo 390ml</div>
+      <div class="price-row">
+        <span class="unit">frasco</span>
+        <span class="price">$4.000</span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="name">Shampoo Balsámico 390ml</div>
+      <div class="price-row">
+        <span class="unit">frasco</span>
+        <span class="price">$4.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Arena Sanitaria</h3>
+  <div class="products">
+    <div class="card higiene">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Arena Turbo Clean 20kg</div>
+      <div class="desc">Aglutinante · aroma lavanda</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$20.000</span><span class="price">$18.000</span></span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Arena Turbo Clean 10kg</div>
+      <div class="desc">Aglutinante · aroma lavanda</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span><span class="old-price">$12.000</span><span class="price">$10.000</span></span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Arena Turbo Clean 4kg</div>
+      <div class="desc">Aglutinante · aroma lavanda</div>
+      <div class="price-row">
+        <span class="unit">bolsa 4kg</span>
+        <span><span class="old-price">$5.000</span><span class="price">$4.500</span></span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Arena Mísifus 20kg</div>
+      <div class="desc">Aglutinante · aroma café moka</div>
+      <div class="price-row">
+        <span class="unit">bolsa 20kg</span>
+        <span><span class="old-price">$16.000</span><span class="price">$14.000</span></span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Arena Fit Fórmula 10kg</div>
+      <div class="desc">Aglomerante · aroma lavanda</div>
+      <div class="price-row">
+        <span class="unit">bolsa 10kg</span>
+        <span><span class="old-price">$13.000</span><span class="price">$11.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Arena TopK9</h3>
+  <div class="products">
+    <div class="card higiene">
+      <div class="name">Arena TopK9 Ecológica 2kg</div>
+      <div class="desc">Aroma lavanda</div>
+      <div class="price-row">
+        <span class="unit">bolsa 2kg</span>
+        <span class="price">$3.000</span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="name">Arena TopK9 2kg</div>
+      <div class="desc">Aroma natural repelente de pulgas</div>
+      <div class="price-row">
+        <span class="unit">bolsa 2kg</span>
+        <span class="price">$3.300</span>
+      </div>
+    </div>
+    <div class="card higiene">
+      <div class="name">Arena TopK9 1,6kg</div>
+      <div class="desc">Cristal fino</div>
+      <div class="price-row">
+        <span class="unit">bolsa 1,6kg</span>
+        <span class="price">$6.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="accesorios"><span class="emoji">🍽️</span> Accesorios</h2>
+  <div class="products">
+    <div class="card accesorios">
+      <div class="name">Plato chico</div>
+      <div class="desc">Plato cuadrado N°1</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$1.000</span>
+      </div>
+    </div>
+    <div class="card accesorios">
+      <div class="name">Plato mediano</div>
+      <div class="desc">Plato cuadrado</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$1.500</span>
+      </div>
+    </div>
+    <div class="card accesorios">
+      <div class="name">Plato grande</div>
+      <div class="desc">Plato cuadrado</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$2.000</span>
+      </div>
+    </div>
+    <div class="card accesorios">
+      <div class="name">Poruña chica</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$500</span>
+      </div>
+    </div>
+    <div class="card accesorios">
+      <div class="name">Poruña grande</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span class="price">$1.000</span>
+      </div>
+    </div>
+    <div class="card accesorios">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Arenero Top-K9 Clásico</div>
+      <div class="desc">Incluye pala y plato · 40x29x14cm</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$10.000</span><span class="price">$8.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="hogar"><span class="emoji">🏠</span> Hogar y kiosco</h2>
+
+  <h3 class="sub-title">Papel higiénico</h3>
+  <div class="products">
+    <div class="card hogar">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Papel Higiénico Noble</div>
+      <div class="desc">22 metros D/H · 60 rollos · $9,85 el metro</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span><span class="old-price">$14.000</span><span class="price">$13.000</span></span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Papel Higiénico Swan</div>
+      <div class="desc">20 metros D/H · 48 rollos · $11,46 el metro</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span><span class="old-price">$11.500</span><span class="price">$11.000</span></span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="name">Papel Higiénico Swan</div>
+      <div class="desc">50 metros D/H · 32 rollos doble hoja · $11,57 el metro</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span class="price">$18.500</span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="name">Papel Higiénico Ovella</div>
+      <div class="desc">50 metros D/H · 32 rollos · $11,25 el metro</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span class="price">$18.000</span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="name">Papel Higiénico Confort</div>
+      <div class="desc">22 metros D/H · 48 rollos · $11,84 el metro</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span class="price">$12.500</span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="name">Papel Higiénico Elite</div>
+      <div class="desc">50 metros D/H · 32 rollos · $12,82 el metro</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span class="price">$20.500</span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="name">Toalla Nova Gigante</div>
+      <div class="desc">70 metros D/H</div>
+      <div class="price-row">
+        <span class="unit">1 unidad</span>
+        <span class="price">$2.800</span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="name">Toalla Nova Gigante</div>
+      <div class="desc">70 metros D/H · $2.600 c/u</div>
+      <div class="price-row">
+        <span class="unit">pack 8un</span>
+        <span class="price">$20.800</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Aseo y varios</h3>
+  <div class="products">
+    <div class="card hogar">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Detergente Ariel Líquido Downy</div>
+      <div class="desc">Concentrado</div>
+      <div class="price-row">
+        <span class="unit">unidad</span>
+        <span><span class="old-price">$7.900</span><span class="price">$6.900</span></span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Papelillos Ronson Premium Quality</div>
+      <div class="desc">Display 25 librillos de 50 hojas</div>
+      <div class="price-row">
+        <span class="unit">display</span>
+        <span><span class="old-price">$10.000</span><span class="price">$7.000</span></span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="name">Encendedor Ronson</div>
+      <div class="desc">Display 20un · $245 c/u</div>
+      <div class="price-row">
+        <span class="unit">display</span>
+        <span class="price">$4.900</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Cuidado adulto mayor</h3>
+  <div class="products">
+    <div class="card hogar">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Pants para Adulto</div>
+      <div class="desc">Talla G/XG · 30 unidades</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span><span class="old-price">$18.000</span><span class="price">$17.000</span></span>
+      </div>
+    </div>
+    <div class="card hogar">
+      <div class="oferta-badge">OFERTA</div>
+      <div class="name">Pañales para Adulto Premium</div>
+      <div class="desc">Talla G · 20 unidades</div>
+      <div class="price-row">
+        <span class="unit">pack</span>
+        <span><span class="old-price">$14.000</span><span class="price">$13.000</span></span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="palta"><span class="emoji">🥑</span> Palta</h2>
+  <div class="products">
+    <div class="card palta">
+      <div class="name">Palta Hass Peruana</div>
+      <div class="desc">Por kilo</div>
+      <div class="price-row">
+        <span class="unit">por kg</span>
+        <span class="price">$3.000</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="huevos"><span class="emoji">🥚</span> Huevos</h2>
+  <div class="products">
+    <div class="card huevos">
+      <div class="name">Huevo Extra Blanco</div>
+      <div class="desc">Bandeja 30 unidades</div>
+      <div class="price-row">
+        <span class="unit">bandeja</span>
+        <span class="price">$6.000</span>
+      </div>
+    </div>
+    <div class="card huevos">
+      <div class="name">Huevo Extra Blanco</div>
+      <div class="desc">Caja 180 unidades</div>
+      <div class="price-row">
+        <span class="unit">caja</span>
+        <span class="price">$34.000</span>
+      </div>
+    </div>
+    <div class="card huevos">
+      <div class="name">Huevo Primera Blanco</div>
+      <div class="desc">180 unidades</div>
+      <div class="price-row">
+        <span class="unit">caja</span>
+        <span class="price">$29.000</span>
+      </div>
+    </div>
+    <div class="card huevos">
+      <div class="name">Huevo Segunda Blanco</div>
+      <div class="desc">180 unidades</div>
+      <div class="price-row">
+        <span class="unit">caja</span>
+        <span class="price">$24.000</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  PetFoodAngol · Argentina 1916 · Despacho a domicilio en todo Angol
+  <a class="foot-phone" href="tel:90957472">📞 90957472</a>
+</footer>
+
+<script>
+(function(){
+  function normalize(str){
+    return str.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+
+  var main = document.querySelector('main');
+  var searchInput = document.getElementById('searchInput');
+  var clearBtn = document.getElementById('clearSearch');
+  var noResults = document.getElementById('noResults');
+
+  function runSearch(){
+    var q = normalize(searchInput.value.trim());
+    clearBtn.style.display = q ? 'block' : 'none';
+
+    var children = Array.prototype.slice.call(main.children);
+    var anyVisible = false;
+    var i = 0;
+
+    while (i < children.length){
+      var el = children[i];
+      if (el.tagName === 'H2'){
+        var j = i + 1;
+        var sectionHasMatch = (q === '');
+        var blockEls = [];
+        while (j < children.length && children[j].tagName !== 'H2'){
+          blockEls.push(children[j]);
+          j++;
+        }
+        var k = 0;
+        while (k < blockEls.length){
+          var h3 = null;
+          if (blockEls[k].tagName === 'H3'){
+            h3 = blockEls[k];
+            k++;
+          }
+          var productsDiv = blockEls[k];
+          k++;
+          if (!productsDiv) break;
+          var cards = Array.prototype.slice.call(productsDiv.querySelectorAll('.card'));
+          var subHasMatch = (q === '');
+          cards.forEach(function(card){
+            var text = normalize(card.textContent);
+            var match = (q === '') || text.indexOf(q) !== -1;
+            card.style.display = match ? '' : 'none';
+            if (match) subHasMatch = true;
+          });
+          if (h3) h3.style.display = subHasMatch ? '' : 'none';
+          productsDiv.style.display = subHasMatch ? '' : 'none';
+          if (subHasMatch) sectionHasMatch = true;
+        }
+        el.style.display = sectionHasMatch ? '' : 'none';
+        if (sectionHasMatch) anyVisible = true;
+        i = j;
+      } else {
+        i++;
+      }
+    }
+
+    noResults.style.display = (q !== '' && !anyVisible) ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', runSearch);
+  clearBtn.addEventListener('click', function(){
+    searchInput.value = '';
+    runSearch();
+    searchInput.focus();
+  });
+  document.querySelectorAll('.quick-nav-links a').forEach(function(link){
+    link.addEventListener('click', function(){
+      if (searchInput.value){
+        searchInput.value = '';
+        runSearch();
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
