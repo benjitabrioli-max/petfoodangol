@@ -100,7 +100,7 @@ ${opts.user ? `<header>
 </header>
 <nav class="subnav">
   <a href="/admin" class="${opts.active === 'products' ? 'active' : ''}">Productos</a>
-  ${opts.user.role === 'owner' ? `<a href="/admin/history" class="${opts.active === 'history' ? 'active' : ''}">Historial</a>` : ''}
+  <a href="/admin/history" class="${opts.active === 'history' ? 'active' : ''}">Historial</a>
   ${opts.user.role === 'owner' ? `<a href="/admin/accounts" class="${opts.active === 'accounts' ? 'active' : ''}">Cuentas</a>` : ''}
 </nav>` : ''}
 <main>

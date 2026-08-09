@@ -322,7 +322,7 @@ app.post('/admin/accounts/new', requireOwner, requireCsrf, async (req, res) => {
   }
 });
 
-app.get('/admin/history', requireOwner, async (req, res) => {
+app.get('/admin/history', async (req, res) => {
   try {
     const commits = await getHistory(20);
     const csrfToken = ensureToken(req);
@@ -335,7 +335,7 @@ app.get('/admin/history', requireOwner, async (req, res) => {
   }
 });
 
-app.post('/admin/history/:sha/restore', requireOwner, requireCsrf, async (req, res) => {
+app.post('/admin/history/:sha/restore', requireCsrf, async (req, res) => {
   try {
     await restoreToCommit(req.params.sha, req.session.user.label);
     req.session.notice = 'Catálogo restaurado. Se publicará en 1-2 min.';
