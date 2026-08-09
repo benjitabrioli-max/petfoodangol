@@ -3,9 +3,10 @@ const express = require('express');
 const session = require('express-session');
 const rateLimit = require('express-rate-limit');
 
-const { verifyLogin } = require('./lib/auth');
+const { verifyLogin, getAccounts, nextFreeSlot, MAX_ACCOUNT_SLOTS } = require('./lib/auth');
 const { ensureToken, verifyToken, rotateToken } = require('./lib/csrf');
-const { loadProducts, saveProducts, slugify, findProduct } = require('./lib/data');
+const { loadProducts, saveProducts, slugify, findProduct, getHistory, restoreToCommit } = require('./lib/data');
+const { createAccountCredentials } = require('./lib/provision');
 const views = require('./lib/views');
 
 const app = express();
@@ -38,6 +39,11 @@ const loginLimiter = rateLimit({
 function requireAuth(req, res, next) {
   if (req.session.user) return next();
   return res.redirect('/admin/login');
+}
+
+function requireOwner(req, res, next) {
+  if (req.session.user && req.session.user.role === 'owner') return next();
+  return res.status(403).send('Esta página es solo para la cuenta owner.');
 }
 
 function requireCsrf(req, res, next) {
@@ -273,6 +279,72 @@ app.post('/admin/products/:id/delete', requireCsrf, async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).send('Error eliminando: ' + err.message);
+  }
+});
+
+app.get('/admin/accounts', requireOwner, (req, res) => {
+  const csrfToken = ensureToken(req);
+  res.send(views.accountsPage({ accounts: getAccounts(), user: req.session.user, csrfToken }));
+});
+
+app.get('/admin/accounts/new', requireOwner, (req, res) => {
+  const csrfToken = ensureToken(req);
+  res.send(views.newAccountFormPage({ user: req.session.user, csrfToken }));
+});
+
+app.post('/admin/accounts/new', requireOwner, requireCsrf, async (req, res) => {
+  const csrfToken = ensureToken(req);
+  try {
+    const { username, label, role } = req.body;
+    if (!username || !label) {
+      return res.send(views.newAccountFormPage({ user: req.session.user, csrfToken, error: 'Faltan campos obligatorios.' }));
+    }
+    if (getAccounts().some(a => a.username.toLowerCase() === username.trim().toLowerCase())) {
+      return res.send(views.newAccountFormPage({ user: req.session.user, csrfToken, error: 'Ya existe una cuenta con ese usuario.' }));
+    }
+    const slot = nextFreeSlot();
+    if (!slot) {
+      return res.send(views.newAccountFormPage({ user: req.session.user, csrfToken, error: `Ya se alcanzó el máximo de ${MAX_ACCOUNT_SLOTS} cuentas.` }));
+    }
+    const safeRole = role === 'owner' ? 'owner' : 'admin';
+    const creds = await createAccountCredentials(slot, username.trim(), safeRole, label.trim());
+    res.send(views.newAccountResultPage({
+      user: req.session.user,
+      csrfToken,
+      username: username.trim(),
+      password: creds.password,
+      qrDataUrl: creds.qrDataUrl,
+      envBlock: creds.envBlock
+    }));
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(views.newAccountFormPage({ user: req.session.user, csrfToken, error: 'Error generando la cuenta: ' + err.message }));
+  }
+});
+
+app.get('/admin/history', requireOwner, async (req, res) => {
+  try {
+    const commits = await getHistory(20);
+    const csrfToken = ensureToken(req);
+    const notice = req.session.notice;
+    delete req.session.notice;
+    res.send(views.historyPage({ user: req.session.user, csrfToken, commits, notice }));
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error cargando historial: ' + err.message);
+  }
+});
+
+app.post('/admin/history/:sha/restore', requireOwner, requireCsrf, async (req, res) => {
+  try {
+    await restoreToCommit(req.params.sha, req.session.user.label);
+    req.session.notice = 'Catálogo restaurado. Se publicará en 1-2 min.';
+    res.redirect('/admin/history');
+  } catch (err) {
+    console.error(err);
+    const csrfToken = ensureToken(req);
+    const commits = await getHistory(20).catch(() => []);
+    res.status(500).send(views.historyPage({ user: req.session.user, csrfToken, commits, error: 'Error al restaurar: ' + err.message }));
   }
 });
 

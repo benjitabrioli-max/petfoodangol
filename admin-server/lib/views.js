@@ -74,26 +74,47 @@ function layout(title, bodyHtml, opts = {}) {
   form.inline{display:inline;}
   fieldset{border:1px solid var(--cream-2);border-radius:8px;padding:0.6rem 1rem;margin:0.6rem 0;}
   legend{font-size:0.8rem;font-weight:700;color:var(--brown-700);padding:0 0.4rem;}
+  .field-error{color:var(--red);font-size:0.8rem;margin-top:0.3rem;display:none;}
+  input.invalid{border-color:var(--red);}
+  .subnav{display:flex;gap:0.5rem;flex-wrap:wrap;padding:0.7rem 1.5rem;background:var(--cream-2);}
+  .subnav a{color:var(--brown-700);text-decoration:none;font-size:0.85rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:999px;}
+  .subnav a.active{background:var(--brown-700);color:#fff;}
+  .subnav a:hover{background:rgba(107,74,48,0.15);}
+  .search-box{position:relative;margin-bottom:1rem;}
+  .search-box input{padding-left:2.1rem;}
+  .search-box .icon{position:absolute;left:0.7rem;top:50%;transform:translateY(-50%);color:#8a7a6b;}
+  .cold-start-note{font-size:0.78rem;color:#8a7a6b;text-align:center;margin-top:1rem;}
+  code.env-block{display:block;white-space:pre-wrap;background:#2a2018;color:#e7dcc9;padding:1rem;border-radius:8px;font-size:0.82rem;overflow-x:auto;}
 </style>
 </head>
 <body>
 ${opts.user ? `<header>
   <div class="logo">PetFood<span>Angol</span> · Admin</div>
   <div class="user-bar">
-    <span>${esc(opts.user.label)}</span>
+    <span>${esc(opts.user.label)}${opts.user.role === 'owner' ? ' 👑' : ''}</span>
     <form method="POST" action="/admin/logout" style="margin:0;">
       <input type="hidden" name="_csrf" value="${esc(opts.csrfToken)}">
       <button class="btn small ghost" type="submit">Salir</button>
     </form>
   </div>
-</header>` : ''}
+</header>
+<nav class="subnav">
+  <a href="/admin" class="${opts.active === 'products' ? 'active' : ''}">Productos</a>
+  ${opts.user.role === 'owner' ? `<a href="/admin/history" class="${opts.active === 'history' ? 'active' : ''}">Historial</a>` : ''}
+  ${opts.user.role === 'owner' ? `<a href="/admin/accounts" class="${opts.active === 'accounts' ? 'active' : ''}">Cuentas</a>` : ''}
+</nav>` : ''}
 <main>
 ${bodyHtml}
 </main>
 <script>
   // Disable the submit button right after a form is submitted, so a double-click
-  // (or an impatient second tap) can't fire the same request twice.
+  // (or an impatient second tap) can't fire the same request twice. Runs on the
+  // bubble phase, after any per-form validation listener already had a chance to
+  // call preventDefault() — if it did, the form isn't actually being sent, so we
+  // must not disable the button (otherwise a failed validation would leave it
+  // stuck forever).
   document.addEventListener('submit', function (e) {
+    if (e.defaultPrevented) return;
     var btn = e.target.querySelector('button[type="submit"]');
     if (!btn || btn.disabled) return;
     btn.dataset.originalText = btn.textContent;
@@ -122,6 +143,11 @@ function loginPage({ error, csrfToken }) {
         <button class="btn green" type="submit" style="width:100%;">Entrar</button>
       </div>
     </form>
+    <p class="cold-start-note">
+      ¿Tardó en cargar esta página? Es normal — el panel es un servicio gratuito que
+      "se duerme" cuando nadie lo usa y tarda unos 30-50 segundos en despertar la primera vez.
+      Una vez cargado, el resto es rápido.
+    </p>
   </div>`;
   return layout('Iniciar sesión', body);
 }
@@ -189,9 +215,60 @@ function dashboardPage(data, { user, csrfToken, notice }) {
       <a class="btn green" href="/admin/products/new">+ Agregar producto</a>
     </div>
     ${notice ? `<div class="notice">${esc(notice)}</div>` : ''}
-    <div class="card">${rows}</div>
+    <div class="search-box">
+      <span class="icon">🔍</span>
+      <input type="text" id="dashSearch" placeholder="Buscar producto o marca...">
+    </div>
+    <p id="dashNoResults" style="display:none;color:#8a7a6b;text-align:center;padding:2rem;">
+      Sin resultados para esa búsqueda.
+    </p>
+    <div class="card" id="catalogBody">${rows}</div>
+    <script>
+    (function(){
+      function normalize(str){ return str.toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, ''); }
+      var root = document.getElementById('catalogBody');
+      var input = document.getElementById('dashSearch');
+      var noResults = document.getElementById('dashNoResults');
+      input.addEventListener('input', function(){
+        var q = normalize(input.value.trim());
+        var children = Array.prototype.slice.call(root.children);
+        var anyVisible = false;
+        var i = 0;
+        while (i < children.length){
+          var el = children[i];
+          if (el.tagName === 'H2'){
+            var j = i + 1;
+            var groupEls = [];
+            while (j < children.length && children[j].tagName !== 'H2'){ groupEls.push(children[j]); j++; }
+            var sectionHasMatch = (q === '');
+            var k = 0;
+            while (k < groupEls.length){
+              var h3 = null;
+              if (groupEls[k].tagName === 'H3'){ h3 = groupEls[k]; k++; }
+              var table = groupEls[k]; k++;
+              if (!table) break;
+              var rowsEls = Array.prototype.slice.call(table.querySelectorAll('tr'));
+              var subHasMatch = (q === '');
+              rowsEls.forEach(function(tr){
+                var match = (q === '') || normalize(tr.textContent).indexOf(q) !== -1;
+                tr.style.display = match ? '' : 'none';
+                if (match) subHasMatch = true;
+              });
+              if (h3) h3.style.display = subHasMatch ? '' : 'none';
+              table.style.display = subHasMatch ? '' : 'none';
+              if (subHasMatch) sectionHasMatch = true;
+            }
+            el.style.display = sectionHasMatch ? '' : 'none';
+            if (sectionHasMatch) anyVisible = true;
+            i = j;
+          } else { i++; }
+        }
+        noResults.style.display = (q !== '' && !anyVisible) ? 'block' : 'none';
+      });
+    })();
+    </script>
   `;
-  return layout('Panel', body, { user, csrfToken });
+  return layout('Panel', body, { user, csrfToken, active: 'products' });
 }
 
 function productForm({ product, sections, data, error, csrfToken, isNew }) {
@@ -203,7 +280,7 @@ function productForm({ product, sections, data, error, csrfToken, isNew }) {
     <h1>${isNew ? 'Agregar producto' : 'Editar producto'}</h1>
     ${error ? `<div class="error">${esc(error)}</div>` : ''}
     <div class="card">
-      <form method="POST" action="${isNew ? '/admin/products/new' : `/admin/products/${esc(p.id)}/edit`}">
+      <form method="POST" id="productForm" action="${isNew ? '/admin/products/new' : `/admin/products/${esc(p.id)}/edit`}" novalidate>
         <input type="hidden" name="_csrf" value="${esc(csrfToken)}">
 
         <label>Categoría</label>
@@ -214,7 +291,8 @@ function productForm({ product, sections, data, error, csrfToken, isNew }) {
         ${subsectionDatalist(data)}
 
         <label>Nombre del producto</label>
-        <input type="text" name="name" value="${esc(p.name)}" required>
+        <input type="text" name="name" id="f-name" value="${esc(p.name)}" required>
+        <span class="field-error" id="e-name">Falta el nombre.</span>
 
         <label>Descripción (sabor, edad, tamaño...)</label>
         <input type="text" name="desc" value="${esc(p.desc)}">
@@ -225,16 +303,19 @@ function productForm({ product, sections, data, error, csrfToken, isNew }) {
         <div class="grid2">
           <div>
             <label>Unidad (ej: "bolsa 18kg", "unidad")</label>
-            <input type="text" name="unit" value="${esc(p.unit)}" required>
+            <input type="text" name="unit" id="f-unit" value="${esc(p.unit)}" required>
+            <span class="field-error" id="e-unit">Falta la unidad.</span>
           </div>
           <div>
             <label>Precio actual (CLP)</label>
-            <input type="number" name="price" value="${esc(p.price)}" min="0" step="1" required>
+            <input type="number" name="price" id="f-price" value="${esc(p.price)}" min="0" step="1" required>
+            <span class="field-error" id="e-price">Falta el precio.</span>
           </div>
         </div>
 
         <label>Precio anterior (dejar vacío si no está en oferta)</label>
-        <input type="number" name="oldPrice" value="${esc(p.oldPrice || '')}" min="0" step="1">
+        <input type="number" name="oldPrice" id="f-oldPrice" value="${esc(p.oldPrice || '')}" min="0" step="1">
+        <span class="field-error" id="e-oldPrice">El precio anterior debe ser mayor al precio actual.</span>
 
         <fieldset>
           <legend>Color de tarjeta (categoría visual)</legend>
@@ -255,16 +336,207 @@ function productForm({ product, sections, data, error, csrfToken, isNew }) {
         </div>
       </form>
     </div>
+    <script>
+    (function(){
+      var form = document.getElementById('productForm');
+      var name = document.getElementById('f-name');
+      var unit = document.getElementById('f-unit');
+      var price = document.getElementById('f-price');
+      var oldPrice = document.getElementById('f-oldPrice');
+
+      function showError(input, errId, show){
+        document.getElementById(errId).style.display = show ? 'block' : 'none';
+        input.classList.toggle('invalid', show);
+      }
+
+      function validate(){
+        var ok = true;
+        if (!name.value.trim()){ showError(name, 'e-name', true); ok = false; } else showError(name, 'e-name', false);
+        if (!unit.value.trim()){ showError(unit, 'e-unit', true); ok = false; } else showError(unit, 'e-unit', false);
+        if (price.value === '' || Number(price.value) < 0){ showError(price, 'e-price', true); ok = false; } else showError(price, 'e-price', false);
+        if (oldPrice.value !== '' && price.value !== '' && Number(oldPrice.value) <= Number(price.value)){
+          showError(oldPrice, 'e-oldPrice', true); ok = false;
+        } else showError(oldPrice, 'e-oldPrice', false);
+        return ok;
+      }
+
+      [name, unit, price, oldPrice].forEach(function(input){
+        input.addEventListener('input', validate);
+      });
+
+      form.addEventListener('submit', function(e){
+        if (!validate()){
+          e.preventDefault();
+          var firstInvalid = form.querySelector('.invalid');
+          if (firstInvalid) firstInvalid.focus();
+          // Re-enable the submit button the double-submit guard disabled, since we blocked this attempt.
+          var btn = form.querySelector('button[type="submit"]');
+          if (btn){ btn.disabled = false; btn.textContent = btn.dataset.originalText || btn.textContent; }
+        }
+      });
+    })();
+    </script>
   `;
   return body;
 }
 
 function editProductPage(opts) {
-  return layout('Editar producto', productForm({ ...opts, isNew: false }), { user: opts.user, csrfToken: opts.csrfToken });
+  return layout('Editar producto', productForm({ ...opts, isNew: false }), { user: opts.user, csrfToken: opts.csrfToken, active: 'products' });
 }
 
 function newProductPage(opts) {
-  return layout('Agregar producto', productForm({ ...opts, isNew: true }), { user: opts.user, csrfToken: opts.csrfToken });
+  return layout('Agregar producto', productForm({ ...opts, isNew: true }), { user: opts.user, csrfToken: opts.csrfToken, active: 'products' });
 }
 
-module.exports = { layout, loginPage, dashboardPage, editProductPage, newProductPage, esc };
+function accountsPage({ accounts, user, csrfToken }) {
+  const rows = accounts.map(a => `
+    <tr>
+      <td><strong>${esc(a.label)}</strong><br><span style="color:#8a7a6b;font-size:0.8rem;">@${esc(a.username)}</span></td>
+      <td>${a.role === 'owner' ? '👑 Owner' : 'Admin'}</td>
+      <td style="color:#8a7a6b;font-size:0.82rem;">ADMIN${a.slot}_*</td>
+      <td>${a.username === user.username
+        ? '<span style="color:#8a7a6b;font-size:0.82rem;">(tu cuenta)</span>'
+        : `<span style="color:#8a7a6b;font-size:0.82rem;">Para eliminarla, borra las variables ADMIN${a.slot}_* en Render → Environment.</span>`}
+      </td>
+    </tr>
+  `).join('');
+
+  const body = `
+    <div class="row" style="justify-content:space-between;margin-bottom:1rem;">
+      <h1 style="margin:0;">Cuentas</h1>
+      <a class="btn green" href="/admin/accounts/new">+ Nueva cuenta</a>
+    </div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Cuenta</th><th>Rol</th><th>Variables</th><th>Eliminar</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    <p style="color:#8a7a6b;font-size:0.85rem;">
+      Solo las cuentas con rol <strong>Owner</strong> pueden ver esta página y crear cuentas nuevas.
+      Crear o eliminar una cuenta requiere pegar/borrar sus variables en Render, así que el cambio
+      no queda activo hasta que lo hagas ahí y el servicio redespliegue.
+    </p>
+  `;
+  return layout('Cuentas', body, { user, csrfToken, active: 'accounts' });
+}
+
+function newAccountFormPage({ user, csrfToken, error }) {
+  const body = `
+    <h1>Nueva cuenta</h1>
+    ${error ? `<div class="error">${esc(error)}</div>` : ''}
+    <div class="card">
+      <form method="POST" action="/admin/accounts/new" id="accountForm" novalidate>
+        <input type="hidden" name="_csrf" value="${esc(csrfToken)}">
+        <label>Usuario</label>
+        <input type="text" name="username" id="f-username" required>
+        <span class="field-error" id="e-username">Escribe un usuario.</span>
+
+        <label>Nombre a mostrar</label>
+        <input type="text" name="label" id="f-label" required>
+        <span class="field-error" id="e-label">Escribe un nombre.</span>
+
+        <label>Rol</label>
+        <select name="role">
+          <option value="admin">Admin (no puede gestionar cuentas)</option>
+          <option value="owner">Owner (puede gestionar cuentas)</option>
+        </select>
+
+        <div class="row" style="margin-top:1.2rem;">
+          <button class="btn green" type="submit">Generar credenciales</button>
+          <a class="btn ghost" href="/admin/accounts">Cancelar</a>
+        </div>
+      </form>
+    </div>
+    <script>
+    (function(){
+      var form = document.getElementById('accountForm');
+      var username = document.getElementById('f-username');
+      var label = document.getElementById('f-label');
+      function showError(input, errId, show){
+        document.getElementById(errId).style.display = show ? 'block' : 'none';
+        input.classList.toggle('invalid', show);
+      }
+      function validate(){
+        var ok = true;
+        if (!username.value.trim()){ showError(username, 'e-username', true); ok = false; } else showError(username, 'e-username', false);
+        if (!label.value.trim()){ showError(label, 'e-label', true); ok = false; } else showError(label, 'e-label', false);
+        return ok;
+      }
+      [username, label].forEach(function(i){ i.addEventListener('input', validate); });
+      form.addEventListener('submit', function(e){
+        if (!validate()){
+          e.preventDefault();
+          var btn = form.querySelector('button[type="submit"]');
+          if (btn){ btn.disabled = false; btn.textContent = btn.dataset.originalText || btn.textContent; }
+        }
+      });
+    })();
+    </script>
+  `;
+  return layout('Nueva cuenta', body, { user, csrfToken, active: 'accounts' });
+}
+
+function newAccountResultPage({ user, csrfToken, username, password, qrDataUrl, envBlock }) {
+  const body = `
+    <h1>Cuenta creada: ${esc(username)}</h1>
+    <div class="notice">Guarda estos datos ahora — la contraseña no se vuelve a mostrar.</div>
+    <div class="card">
+      <label>Contraseña</label>
+      <code class="env-block">${esc(password)}</code>
+
+      <label>Código QR para la app autenticadora</label>
+      <img src="${qrDataUrl}" alt="QR 2FA" style="display:block;margin:0.5rem auto;">
+
+      <label>Variables para pegar en Render → Environment</label>
+      <code class="env-block">${esc(envBlock)}</code>
+
+      <p style="color:#8a7a6b;font-size:0.85rem;">
+        Esta cuenta no podrá entrar hasta que pegues estas variables en Render y el servicio redespliegue (1-2 min).
+      </p>
+      <a class="btn green" href="/admin/accounts">Listo, volver a Cuentas</a>
+    </div>
+  `;
+  return layout('Cuenta creada', body, { user, csrfToken, active: 'accounts' });
+}
+
+function historyPage({ user, csrfToken, commits, notice, error }) {
+  const rows = commits.map(c => `
+    <tr>
+      <td>
+        ${esc(c.message)}
+        <br><span style="color:#8a7a6b;font-size:0.78rem;">${esc(c.author)} · ${esc(c.date)}</span>
+      </td>
+      <td>
+        <form class="inline" method="POST" action="/admin/history/${esc(c.sha)}/restore"
+          onsubmit="return confirm('Esto va a descartar TODOS los cambios hechos después de este punto y va a dejar el catálogo tal como estaba en ese momento. ¿Seguro que quieres continuar?');">
+          <input type="hidden" name="_csrf" value="${esc(csrfToken)}">
+          <button class="btn small red" type="submit">Restaurar a este punto</button>
+        </form>
+      </td>
+    </tr>
+  `).join('');
+
+  const body = `
+    <h1>Historial de cambios</h1>
+    ${notice ? `<div class="notice">${esc(notice)}</div>` : ''}
+    ${error ? `<div class="error">${esc(error)}</div>` : ''}
+    <div class="card">
+      <table>
+        <thead><tr><th>Cambio</th><th>Acción</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    <p style="color:#8a7a6b;font-size:0.85rem;">
+      "Restaurar a este punto" deja el catálogo exactamente como estaba en ese momento,
+      descartando cualquier cambio hecho después. No borra el historial: queda registrado
+      como un cambio nuevo, así que siempre se puede volver atrás.
+    </p>
+  `;
+  return layout('Historial', body, { user, csrfToken, active: 'history' });
+}
+
+module.exports = {
+  layout, loginPage, dashboardPage, editProductPage, newProductPage,
+  accountsPage, newAccountFormPage, newAccountResultPage, historyPage, esc
+};

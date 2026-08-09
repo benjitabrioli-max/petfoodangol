@@ -19,16 +19,29 @@ function repoParams() {
   };
 }
 
-async function readFile(filePath) {
+async function readFile(filePath, ref) {
   if (LOCAL_FS_MODE) {
     const content = fs.readFileSync(path.join(LOCAL_ROOT, filePath), 'utf8');
     return { content, sha: null };
   }
   const octokit = getClient();
   const { owner, repo, branch } = repoParams();
-  const res = await octokit.repos.getContent({ owner, repo, path: filePath, ref: branch });
+  const res = await octokit.repos.getContent({ owner, repo, path: filePath, ref: ref || branch });
   const content = Buffer.from(res.data.content, 'base64').toString('utf8');
   return { content, sha: res.data.sha };
+}
+
+async function listCommits(filePath, perPage = 20) {
+  if (LOCAL_FS_MODE) return [];
+  const octokit = getClient();
+  const { owner, repo, branch } = repoParams();
+  const res = await octokit.repos.listCommits({ owner, repo, sha: branch, path: filePath, per_page: perPage });
+  return res.data.map(c => ({
+    sha: c.sha,
+    message: (c.commit.message || '').split('\n')[0],
+    author: c.commit.author ? c.commit.author.name : 'desconocido',
+    date: c.commit.author ? c.commit.author.date : ''
+  }));
 }
 
 async function writeFiles(files, message) {
@@ -62,4 +75,4 @@ async function writeFiles(files, message) {
   }
 }
 
-module.exports = { readFile, writeFiles };
+module.exports = { readFile, writeFiles, listCommits };

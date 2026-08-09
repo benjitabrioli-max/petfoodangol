@@ -1,4 +1,4 @@
-const { readFile, writeFiles } = require('./github');
+const { readFile, writeFiles, listCommits } = require('./github');
 const { renderSite } = require('./render');
 
 const PRODUCTS_PATH = 'data/products.json';
@@ -7,6 +7,16 @@ const SITE_PATH = 'index.html';
 async function loadProducts() {
   const { content } = await readFile(PRODUCTS_PATH);
   return JSON.parse(content);
+}
+
+async function getHistory(limit = 20) {
+  return listCommits(PRODUCTS_PATH, limit);
+}
+
+async function restoreToCommit(sha, authorLabel) {
+  const { content } = await readFile(PRODUCTS_PATH, sha);
+  const data = JSON.parse(content);
+  await saveProducts(data, 'Restaurar catálogo a versión anterior', authorLabel);
 }
 
 async function saveProducts(data, commitMessage, authorLabel) {
@@ -40,4 +50,4 @@ function findProduct(data, productId) {
   return null;
 }
 
-module.exports = { loadProducts, saveProducts, slugify, findProduct };
+module.exports = { loadProducts, saveProducts, slugify, findProduct, getHistory, restoreToCommit };
