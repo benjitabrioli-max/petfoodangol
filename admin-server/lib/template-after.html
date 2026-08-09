@@ -5,6 +5,28 @@
   <a class="foot-phone" href="tel:90957472">📞 90957472</a>
 </footer>
 
+<button type="button" class="cart-fab" id="cartFab" hidden>
+  🛒 Mi pedido <span class="cart-count" id="cartCount">0</span>
+</button>
+
+<div class="cart-overlay" id="cartOverlay" hidden></div>
+
+<aside class="cart-panel" id="cartPanel" hidden>
+  <div class="cart-panel-header">
+    <h2>Mi pedido</h2>
+    <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-panel-footer">
+    <div class="cart-total">
+      <span>Total aprox.</span>
+      <span id="cartTotal">$0</span>
+    </div>
+    <a href="#" class="cart-send-btn" id="cartSendBtn">💬 Pedir por WhatsApp</a>
+    <button type="button" class="cart-clear-btn" id="cartClearBtn">Vaciar pedido</button>
+  </div>
+</aside>
+
 <script>
 (function(){
   function normalize(str){
@@ -81,6 +103,163 @@
       }
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  var CART_KEY = 'petfoodangol_cart_v1';
+  var WHATSAPP_NUMBER = '56990957472';
+
+  function loadCart(){
+    try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+  function formatCLP(n){ return '$' + Number(n).toLocaleString('es-CL'); }
+
+  var cart = loadCart();
+
+  var fab = document.getElementById('cartFab');
+  var cartCount = document.getElementById('cartCount');
+  var overlay = document.getElementById('cartOverlay');
+  var panel = document.getElementById('cartPanel');
+  var itemsEl = document.getElementById('cartItems');
+  var totalEl = document.getElementById('cartTotal');
+  var closeBtn = document.getElementById('cartCloseBtn');
+  var sendBtn = document.getElementById('cartSendBtn');
+  var clearBtn = document.getElementById('cartClearBtn');
+
+  function totalCount(){
+    return Object.keys(cart).reduce(function(sum, id){ return sum + cart[id].qty; }, 0);
+  }
+  function totalPrice(){
+    return Object.keys(cart).reduce(function(sum, id){ return sum + cart[id].qty * cart[id].price; }, 0);
+  }
+
+  function esc(str){
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function updateAddButtons(){
+    document.querySelectorAll('.add-cart-btn').forEach(function(btn){
+      var card = btn.closest('.card');
+      var pid = card.getAttribute('data-pid');
+      if (cart[pid]){
+        btn.textContent = '✓ En el pedido (' + cart[pid].qty + ')';
+        btn.classList.add('in-cart');
+      } else {
+        btn.textContent = '+ Agregar';
+        btn.classList.remove('in-cart');
+      }
+    });
+  }
+
+  function renderPanel(){
+    var ids = Object.keys(cart);
+    fab.hidden = ids.length === 0;
+    cartCount.textContent = totalCount();
+
+    if (ids.length === 0){
+      itemsEl.innerHTML = '<p class="cart-empty">Todavía no agregaste productos.</p>';
+    } else {
+      itemsEl.innerHTML = ids.map(function(id){
+        var item = cart[id];
+        return '<div class="cart-item" data-pid="' + esc(id) + '">' +
+          '<div>' +
+          '<div class="cart-item-name">' + esc(item.name) + '</div>' +
+          '<div class="cart-item-unit">' + esc(item.unit) + '</div>' +
+          '<div class="cart-item-price">' + formatCLP(item.price) + ' c/u ' +
+          '<button type="button" class="cart-remove" data-action="remove">quitar</button></div>' +
+          '</div>' +
+          '<div class="cart-qty">' +
+          '<button type="button" data-action="dec" aria-label="Quitar uno">-</button>' +
+          '<span>' + item.qty + '</span>' +
+          '<button type="button" data-action="inc" aria-label="Agregar uno">+</button>' +
+          '</div>' +
+          '</div>';
+      }).join('');
+    }
+    totalEl.textContent = formatCLP(totalPrice());
+    updateAddButtons();
+  }
+
+  function addToCart(pid, name, price, unit){
+    if (!pid) return;
+    if (!cart[pid]) cart[pid] = { name: name, price: price, unit: unit, qty: 0 };
+    cart[pid].qty += 1;
+    saveCart();
+    renderPanel();
+  }
+  function changeQty(pid, delta){
+    if (!cart[pid]) return;
+    cart[pid].qty += delta;
+    if (cart[pid].qty <= 0) delete cart[pid];
+    saveCart();
+    renderPanel();
+  }
+  function removeItem(pid){
+    delete cart[pid];
+    saveCart();
+    renderPanel();
+  }
+  function clearCart(){
+    cart = {};
+    saveCart();
+    renderPanel();
+    closePanel();
+  }
+  function openPanel(){ overlay.hidden = false; panel.hidden = false; }
+  function closePanel(){ overlay.hidden = true; panel.hidden = true; }
+
+  document.addEventListener('click', function(e){
+    var addBtn = e.target.closest('.add-cart-btn');
+    if (addBtn){
+      var card = addBtn.closest('.card');
+      addToCart(
+        card.getAttribute('data-pid'),
+        card.getAttribute('data-pname'),
+        Number(card.getAttribute('data-pprice')),
+        card.getAttribute('data-punit')
+      );
+      return;
+    }
+    var qtyBtn = e.target.closest('.cart-qty button');
+    if (qtyBtn){
+      var itemEl = qtyBtn.closest('.cart-item');
+      changeQty(itemEl.getAttribute('data-pid'), qtyBtn.getAttribute('data-action') === 'inc' ? 1 : -1);
+      return;
+    }
+    var removeBtn = e.target.closest('.cart-remove');
+    if (removeBtn){
+      removeItem(removeBtn.closest('.cart-item').getAttribute('data-pid'));
+      return;
+    }
+  });
+
+  fab.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+  clearBtn.addEventListener('click', clearCart);
+
+  sendBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    var ids = Object.keys(cart);
+    if (ids.length === 0) return;
+    var lines = ['Hola! Quiero pedir:', ''];
+    ids.forEach(function(id){
+      var item = cart[id];
+      lines.push('- ' + item.qty + 'x ' + item.name + ' (' + formatCLP(item.price) + ' c/u)');
+    });
+    lines.push('');
+    lines.push('Total aprox: ' + formatCLP(totalPrice()));
+    var text = encodeURIComponent(lines.join('\n'));
+    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text, '_blank');
+  });
+
+  renderPanel();
 })();
 </script>
 

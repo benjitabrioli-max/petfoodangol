@@ -23,7 +23,11 @@ function formatCLP(amount) {
 
 function renderProduct(product) {
   const classes = ['card', product.colorClass].filter(Boolean).join(' ').trim();
-  const parts = [`    <div class="${escapeHtml(classes)}">`];
+  const parts = [
+    `    <div class="${escapeHtml(classes)}" data-pid="${escapeHtml(product.id)}" ` +
+    `data-pname="${escapeHtml(product.name + (product.desc ? ' - ' + product.desc : ''))}" ` +
+    `data-pprice="${Number(product.price) || 0}" data-punit="${escapeHtml(product.unit)}">`
+  ];
 
   if (product.oldPrice) {
     parts.push('      <div class="oferta-badge">OFERTA</div>');
@@ -52,6 +56,7 @@ function renderProduct(product) {
     parts.push(`        <span class="price">${formatCLP(product.price)}</span>`);
   }
   parts.push('      </div>');
+  parts.push('      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>');
   parts.push('    </div>');
   return parts.join('\n');
 }

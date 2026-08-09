@@ -329,6 +329,161 @@
     font-size:0.82rem;
     color:#8a7a6b;
   }
+  .add-cart-btn{
+    margin-top:0.6rem;
+    width:100%;
+    background:var(--cream-2);
+    color:var(--brown-900);
+    border:none;
+    border-radius:999px;
+    padding:0.5rem 0.8rem;
+    font-weight:700;
+    font-size:0.85rem;
+    cursor:pointer;
+  }
+  .add-cart-btn:hover{background:#e8d7bd;}
+  .add-cart-btn.in-cart{background:var(--green);color:#fff;}
+
+  /* Carrito de pedido */
+  .cart-fab{
+    position:fixed;
+    right:1.2rem;
+    bottom:1.2rem;
+    z-index:40;
+    background:var(--brown-900);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:0.9rem 1.3rem;
+    font-weight:800;
+    font-size:0.95rem;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+  }
+  .cart-fab .cart-count{
+    background:var(--yellow);
+    color:var(--brown-900);
+    border-radius:999px;
+    min-width:1.5rem;
+    height:1.5rem;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.8rem;
+    padding:0 0.3rem;
+  }
+  .cart-fab[hidden]{display:none;}
+  .cart-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    z-index:50;
+  }
+  .cart-overlay[hidden]{display:none;}
+  .cart-panel{
+    position:fixed;
+    right:0;
+    top:0;
+    bottom:0;
+    width:min(420px, 100%);
+    background:var(--cream);
+    z-index:51;
+    box-shadow:-8px 0 24px rgba(0,0,0,0.2);
+    display:flex;
+    flex-direction:column;
+  }
+  .cart-panel[hidden]{display:none;}
+  .cart-panel-header{
+    background:linear-gradient(135deg,var(--brown-900),var(--brown-700));
+    color:#fff;
+    padding:1.2rem 1.5rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .cart-panel-header h2{margin:0;font-size:1.15rem;}
+  .cart-close-btn{
+    background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;
+  }
+  .cart-items{
+    flex:1;
+    overflow-y:auto;
+    padding:1rem 1.5rem;
+  }
+  .cart-empty{
+    color:#8a7a6b;
+    text-align:center;
+    padding:2rem 1rem;
+  }
+  .cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:0.6rem;
+    padding:0.8rem 0;
+    border-bottom:1px solid var(--cream-2);
+  }
+  .cart-item-name{font-weight:700;font-size:0.92rem;}
+  .cart-item-unit{font-size:0.78rem;color:#8a7a6b;}
+  .cart-item-price{font-size:0.8rem;color:#8a7a6b;margin-top:0.2rem;}
+  .cart-qty{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+  }
+  .cart-qty button{
+    width:1.8rem;height:1.8rem;
+    border-radius:999px;
+    border:1px solid var(--cream-2);
+    background:#fff;
+    font-weight:800;
+    cursor:pointer;
+    font-size:1rem;
+    line-height:1;
+  }
+  .cart-remove{
+    background:none;border:none;color:var(--red, #c0392b);font-size:0.78rem;cursor:pointer;text-decoration:underline;margin-left:0.5rem;
+  }
+  .cart-panel-footer{
+    padding:1.2rem 1.5rem;
+    border-top:1px solid var(--cream-2);
+    background:#fff;
+  }
+  .cart-total{
+    display:flex;
+    justify-content:space-between;
+    font-weight:800;
+    font-size:1.1rem;
+    margin-bottom:0.9rem;
+    color:var(--brown-900);
+  }
+  .cart-send-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    padding:0.8rem;
+    border-radius:999px;
+    box-shadow:0 4px 10px rgba(37,211,102,0.35);
+  }
+  .cart-clear-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:none;
+    border:none;
+    color:#8a7a6b;
+    font-size:0.8rem;
+    text-decoration:underline;
+    cursor:pointer;
+    margin-top:0.7rem;
+  }
   .oferta-badge{
     position:absolute;
     top:-10px;
@@ -441,7 +596,7 @@
 
   <h3 class="sub-title">Master Dog 18kg</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-master-dog-18kg-master-dog-adulto-18kg-sabor-pollo" data-pname="Master Dog Adulto 18kg - Sabor Pollo" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Master Dog Adulto 18kg</div>
       <div class="desc">Sabor Pollo</div>
@@ -449,8 +604,9 @@
         <span class="unit">bolsa 18kg</span>
         <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-master-dog-18kg-master-dog-senior-18kg-sabor-carne" data-pname="Master Dog Senior 18kg - Sabor Carne" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Master Dog Senior 18kg</div>
       <div class="desc">Sabor Carne</div>
@@ -458,8 +614,9 @@
         <span class="unit">bolsa 18kg</span>
         <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-master-dog-18kg-master-dog-cachorro-18kg-todas-las-razas" data-pname="Master Dog Cachorro 18kg - Todas las razas" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Master Dog Cachorro 18kg</div>
       <div class="desc">Todas las razas</div>
@@ -468,8 +625,9 @@
         <span class="unit">bolsa 18kg</span>
         <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-master-dog-18kg-master-dog-adulto-18kg-razas-pequenas" data-pname="Master Dog Adulto 18kg - Razas pequeñas" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Master Dog Adulto 18kg</div>
       <div class="desc">Razas pequeñas</div>
@@ -478,84 +636,93 @@
         <span class="unit">bolsa 18kg</span>
         <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Master Dog 8kg</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-master-dog-8kg-master-dog-cachorro-8kg-razas-pequenas" data-pname="Master Dog Cachorro 8kg - Razas pequeñas" data-pprice="17000" data-punit="bolsa 8kg">
       <div class="name">Master Dog Cachorro 8kg</div>
       <div class="desc">Razas pequeñas</div>
       <div class="price-row">
         <span class="unit">bolsa 8kg</span>
         <span class="price">$17.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-master-dog-8kg-master-dog-adulto-8kg-razas-pequenas" data-pname="Master Dog Adulto 8kg - Razas pequeñas" data-pprice="17000" data-punit="bolsa 8kg">
       <div class="name">Master Dog Adulto 8kg</div>
       <div class="desc">Razas pequeñas</div>
       <div class="price-row">
         <span class="unit">bolsa 8kg</span>
         <span class="price">$17.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-master-dog-8kg-master-dog-senior-8kg-sabor-carne" data-pname="Master Dog Senior 8kg - Sabor Carne" data-pprice="17000" data-punit="bolsa 8kg">
       <div class="name">Master Dog Senior 8kg</div>
       <div class="desc">Sabor Carne</div>
       <div class="price-row">
         <span class="unit">bolsa 8kg</span>
         <span class="price">$17.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Champion Dog 18kg</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-champion-dog-18kg-champion-dog-cachorro-18kg-carne-y-pollo-lata-de-regalo" data-pname="Champion Dog Cachorro 18kg - Carne y Pollo · + lata de regalo" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="name">Champion Dog Cachorro 18kg</div>
       <div class="desc">Carne y Pollo · + lata de regalo</div>
       <div class="price-row">
         <span class="unit">bolsa 18kg</span>
         <span class="price">$30.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-champion-dog-18kg-champion-dog-adulto-razas-pequenas-18kg-carne-y-pollo-lata-de-regalo" data-pname="Champion Dog Adulto Razas Pequeñas 18kg - Carne y Pollo · + lata de regalo" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="name">Champion Dog Adulto Razas Pequeñas 18kg</div>
       <div class="desc">Carne y Pollo · + lata de regalo</div>
       <div class="price-row">
         <span class="unit">bolsa 18kg</span>
         <span class="price">$30.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-champion-dog-18kg-champion-dog-adulto-18kg-salmon-y-pollo-lata-de-regalo" data-pname="Champion Dog Adulto 18kg - Salmón y Pollo · + lata de regalo" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="name">Champion Dog Adulto 18kg</div>
       <div class="desc">Salmón y Pollo · + lata de regalo</div>
       <div class="price-row">
         <span class="unit">bolsa 18kg</span>
         <span class="price">$30.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-champion-dog-18kg-champion-dog-adulto-18kg-carne-y-pollo-lata-de-regalo" data-pname="Champion Dog Adulto 18kg - Carne y Pollo · + lata de regalo" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="name">Champion Dog Adulto 18kg</div>
       <div class="desc">Carne y Pollo · + lata de regalo</div>
       <div class="price-row">
         <span class="unit">bolsa 18kg</span>
         <span class="price">$30.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-champion-dog-18kg-champion-dog-senior-18kg-carne-y-pollo-lata-de-regalo" data-pname="Champion Dog Senior 18kg - Carne y Pollo · + lata de regalo" data-pprice="30000" data-punit="bolsa 18kg">
       <div class="name">Champion Dog Senior 18kg</div>
       <div class="desc">Carne y Pollo · + lata de regalo</div>
       <div class="price-row">
         <span class="unit">bolsa 18kg</span>
         <span class="price">$30.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Fit Fórmula</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-fit-formula-fit-formula-cachorro-10kg" data-pname="Fit Fórmula Cachorro 10kg" data-pprice="24000" data-punit="bolsa 10kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Fit Fórmula Cachorro 10kg</div>
       <div class="extra">Granel: $2.700 x kilo</div>
@@ -563,8 +730,9 @@
         <span class="unit">bolsa 10kg</span>
         <span><span class="old-price">$26.000</span><span class="price">$24.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-fit-formula-fit-formula-r-p-10kg-razas-pequenas" data-pname="Fit Fórmula R/P 10kg - Razas pequeñas" data-pprice="23000" data-punit="bolsa 10kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Fit Fórmula R/P 10kg</div>
       <div class="desc">Razas pequeñas</div>
@@ -573,64 +741,71 @@
         <span class="unit">bolsa 10kg</span>
         <span><span class="old-price">$25.000</span><span class="price">$23.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-fit-formula-fit-formula-adulto-20kg" data-pname="Fit Fórmula Adulto 20kg" data-pprice="38000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Fit Fórmula Adulto 20kg</div>
       <div class="price-row">
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$43.000</span><span class="price">$38.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-fit-formula-fit-formula-senior-10kg-razas-pequenas" data-pname="Fit Fórmula Senior 10kg - Razas pequeñas" data-pprice="27000" data-punit="bolsa 10kg">
       <div class="name">Fit Fórmula Senior 10kg</div>
       <div class="desc">Razas pequeñas</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$27.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-fit-formula-fit-formula-senior-20kg" data-pname="Fit Fórmula Senior 20kg" data-pprice="43000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Fit Fórmula Senior 20kg</div>
       <div class="price-row">
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$46.000</span><span class="price">$43.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Nomade</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-nomade-nomade-senior-15kg-razas-medianas-y-grandes" data-pname="Nomade Senior 15kg - Razas medianas y grandes" data-pprice="32000" data-punit="bolsa 15kg">
       <div class="name">Nomade Senior 15kg</div>
       <div class="desc">Razas medianas y grandes</div>
       <div class="price-row">
         <span class="unit">bolsa 15kg</span>
         <span class="price">$32.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-nomade-nomade-adulto-20kg-razas-mediana-y-grande" data-pname="Nomade Adulto 20kg - Razas mediana y grande" data-pprice="36000" data-punit="bolsa 20kg">
       <div class="name">Nomade Adulto 20kg</div>
       <div class="desc">Razas mediana y grande</div>
       <div class="price-row">
         <span class="unit">bolsa 20kg</span>
         <span class="price">$36.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-nomade-nomade-cachorro-10kg-todas-las-razas" data-pname="Nomade Cachorro 10kg - Todas las razas" data-pprice="22500" data-punit="bolsa 10kg">
       <div class="name">Nomade Cachorro 10kg</div>
       <div class="desc">Todas las razas</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$22.500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Cachupín y Sabrokan 25kg</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-cachupin-y-sabrokan-25kg-cachupin-cachorro-25kg-carne-y-leche" data-pname="Cachupín Cachorro 25kg - Carne y Leche" data-pprice="30000" data-punit="bolsa 25kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Cachupín Cachorro 25kg</div>
       <div class="desc">Carne y Leche</div>
@@ -638,8 +813,9 @@
         <span class="unit">bolsa 25kg</span>
         <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-cachupin-y-sabrokan-25kg-cachupin-adulto-25kg-granel-1-400-x-kilo" data-pname="Cachupín Adulto 25kg - Granel: $1.400 x kilo" data-pprice="30000" data-punit="bolsa 25kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Cachupín Adulto 25kg</div>
       <div class="desc">Granel: $1.400 x kilo</div>
@@ -647,8 +823,9 @@
         <span class="unit">bolsa 25kg</span>
         <span><span class="old-price">$32.000</span><span class="price">$30.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-cachupin-y-sabrokan-25kg-sabrokan-adulto-25kg-sabor-carne" data-pname="Sabrokán Adulto 25kg - Sabor Carne" data-pprice="30000" data-punit="bolsa 25kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Sabrokán Adulto 25kg</div>
       <div class="desc">Sabor Carne</div>
@@ -656,45 +833,50 @@
         <span class="unit">bolsa 25kg</span>
         <span><span class="old-price">$31.500</span><span class="price">$30.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">XT21 / XT25</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-xt21-xt25-xt-25-cachorro-10kg" data-pname="XT-25 Cachorro 10kg" data-pprice="16000" data-punit="bolsa 10kg">
       <div class="name">XT-25 Cachorro 10kg</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$16.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-xt21-xt25-xt21-adulto-10kg" data-pname="XT21 Adulto 10kg" data-pprice="15000" data-punit="bolsa 10kg">
       <div class="name">XT21 Adulto 10kg</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$15.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-xt21-xt25-xt21-adulto-25kg" data-pname="XT21 Adulto 25kg" data-pprice="32000" data-punit="bolsa 25kg">
       <div class="name">XT21 Adulto 25kg</div>
       <div class="price-row">
         <span class="unit">bolsa 25kg</span>
         <span class="price">$32.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Strong y Tyson</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-strong-y-tyson-strong-adulto-25kg-perro-adulto" data-pname="Strong Adulto 25kg - Perro adulto" data-pprice="38000" data-punit="bolsa 25kg">
       <div class="name">Strong Adulto 25kg</div>
       <div class="desc">Perro adulto</div>
       <div class="price-row">
         <span class="unit">bolsa 25kg</span>
         <span class="price">$38.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-strong-y-tyson-tyson-adulto-25kg-oferta-valida-hasta-16-08" data-pname="Tyson Adulto 25kg - Oferta válida hasta 16/08" data-pprice="25000" data-punit="bolsa 25kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Tyson Adulto 25kg</div>
       <div class="desc">Oferta válida hasta 16/08</div>
@@ -702,12 +884,13 @@
         <span class="unit">bolsa 25kg</span>
         <span><span class="old-price">$26.000</span><span class="price">$25.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Bokato</h3>
   <div class="products">
-    <div class="card">
+    <div class="card" data-pid="perros-bokato-bokato-cachorro-10kg-todas-las-razas" data-pname="Bokato Cachorro 10kg - Todas las razas" data-pprice="27000" data-punit="bolsa 10kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Bokato Cachorro 10kg</div>
       <div class="desc">Todas las razas</div>
@@ -715,8 +898,9 @@
         <span class="unit">bolsa 10kg</span>
         <span><span class="old-price">$31.700</span><span class="price">$27.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-bokato-bokato-petit-10kg-super-premium-razas-pequenas" data-pname="Bokato Petit 10kg - Súper Premium · razas pequeñas" data-pprice="29000" data-punit="bolsa 10kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Bokato Petit 10kg</div>
       <div class="desc">Súper Premium · razas pequeñas</div>
@@ -724,8 +908,9 @@
         <span class="unit">bolsa 10kg</span>
         <span><span class="old-price">$34.500</span><span class="price">$29.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-bokato-bokato-senior-7kg-super-premium-razas-pequenas" data-pname="Bokato Senior 7kg - Súper Premium · razas pequeñas" data-pprice="27000" data-punit="bolsa 7kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Bokato Senior 7kg</div>
       <div class="desc">Súper Premium · razas pequeñas</div>
@@ -733,8 +918,9 @@
         <span class="unit">bolsa 7kg</span>
         <span><span class="old-price">$29.900</span><span class="price">$27.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-bokato-bokato-senior-12kg-super-premium-razas-mediana-y-grande" data-pname="Bokato Senior 12kg - Súper Premium · razas mediana y grande" data-pprice="44000" data-punit="bolsa 12kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Bokato Senior 12kg</div>
       <div class="desc">Súper Premium · razas mediana y grande</div>
@@ -742,8 +928,9 @@
         <span class="unit">bolsa 12kg</span>
         <span><span class="old-price">$49.500</span><span class="price">$44.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-bokato-bokato-adulto-tradicion-20kg-razas-mediana-y-grande-premium" data-pname="Bokato Adulto Tradición 20kg - Razas mediana y grande premium" data-pprice="47000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Bokato Adulto Tradición 20kg</div>
       <div class="desc">Razas mediana y grande premium</div>
@@ -751,8 +938,9 @@
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$54.900</span><span class="price">$47.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="perros-bokato-bokato-gold-20kg-super-premium" data-pname="Bokato Gold 20kg - Súper Premium" data-pprice="51000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Bokato Gold 20kg</div>
       <div class="desc">Súper Premium</div>
@@ -760,6 +948,7 @@
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$58.900</span><span class="price">$51.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
@@ -767,7 +956,7 @@
 
   <h3 class="sub-title">Whiskas 10kg</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-whiskas-10kg-whiskas-gatito-10kg-sabor-carne-y-leche-2-12-meses" data-pname="Whiskas Gatito 10kg - Sabor Carne y Leche · 2-12 meses" data-pprice="28000" data-punit="bolsa 10kg">
       <div class="name">Whiskas Gatito 10kg</div>
       <div class="desc">Sabor Carne y Leche · 2-12 meses</div>
       <div class="extra">Granel: $2.900 x kilo</div>
@@ -775,24 +964,27 @@
         <span class="unit">bolsa 10kg</span>
         <span class="price">$28.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-whiskas-10kg-whiskas-adulto-10kg-sabor-pollo-1-anos" data-pname="Whiskas Adulto 10kg - Sabor Pollo · 1+ años" data-pprice="28000" data-punit="bolsa 10kg">
       <div class="name">Whiskas Adulto 10kg</div>
       <div class="desc">Sabor Pollo · 1+ años</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$28.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-whiskas-10kg-whiskas-adulto-10kg-sabor-carne-1-anos" data-pname="Whiskas Adulto 10kg - Sabor Carne · 1+ años" data-pprice="28000" data-punit="bolsa 10kg">
       <div class="name">Whiskas Adulto 10kg</div>
       <div class="desc">Sabor Carne · 1+ años</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$28.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-whiskas-10kg-whiskas-adulto-10kg-sabor-pescado-1-anos" data-pname="Whiskas Adulto 10kg - Sabor Pescado · 1+ años" data-pprice="28000" data-punit="bolsa 10kg">
       <div class="name">Whiskas Adulto 10kg</div>
       <div class="desc">Sabor Pescado · 1+ años</div>
       <div class="extra">Granel: $2.900 x kilo</div>
@@ -800,20 +992,22 @@
         <span class="unit">bolsa 10kg</span>
         <span class="price">$28.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Cat Chow 19,5kg</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-cat-chow-19-5kg-cat-chow-gatito-19-5kg-granel-3-900-x-kilo" data-pname="Cat Chow Gatito 19,5kg - Granel: $3.900 x kilo" data-pprice="65000" data-punit="bolsa 19,5kg">
       <div class="name">Cat Chow Gatito 19,5kg</div>
       <div class="desc">Granel: $3.900 x kilo</div>
       <div class="price-row">
         <span class="unit">bolsa 19,5kg</span>
         <span class="price">$65.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-cat-chow-19-5kg-cat-chow-adulto-19-5kg-gato-esterilizados" data-pname="Cat Chow Adulto 19,5kg - Gato esterilizados" data-pprice="65000" data-punit="bolsa 19,5kg">
       <div class="name">Cat Chow Adulto 19,5kg</div>
       <div class="desc">Gato esterilizados</div>
       <div class="extra">Granel: $3.900 x kilo</div>
@@ -821,8 +1015,9 @@
         <span class="unit">bolsa 19,5kg</span>
         <span class="price">$65.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-cat-chow-19-5kg-cat-chow-adulto-19-5kg-delimix" data-pname="Cat Chow Adulto 19,5kg - Delimix" data-pprice="65000" data-punit="bolsa 19,5kg">
       <div class="name">Cat Chow Adulto 19,5kg</div>
       <div class="desc">Delimix</div>
       <div class="extra">Granel: $3.900 x kilo</div>
@@ -830,8 +1025,9 @@
         <span class="unit">bolsa 19,5kg</span>
         <span class="price">$65.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-cat-chow-19-5kg-cat-chow-adulto-19-5kg-pescado" data-pname="Cat Chow Adulto 19,5kg - Pescado" data-pprice="65000" data-punit="bolsa 19,5kg">
       <div class="name">Cat Chow Adulto 19,5kg</div>
       <div class="desc">Pescado</div>
       <div class="extra">Granel: $3.900 x kilo</div>
@@ -839,12 +1035,13 @@
         <span class="unit">bolsa 19,5kg</span>
         <span class="price">$65.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Master Cat 20kg</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-master-cat-20kg-master-cat-adulto-20kg-sabor-carne" data-pname="Master Cat Adulto 20kg - Sabor Carne" data-pprice="42000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Master Cat Adulto 20kg</div>
       <div class="desc">Sabor Carne</div>
@@ -852,8 +1049,9 @@
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$44.000</span><span class="price">$42.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-master-cat-20kg-master-cat-adulto-mix-gourmet-20kg-sabor-salmon-carne-y-pollo" data-pname="Master Cat Adulto Mix Gourmet 20kg - Sabor Salmón, Carne y Pollo" data-pprice="42000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Master Cat Adulto Mix Gourmet 20kg</div>
       <div class="desc">Sabor Salmón, Carne y Pollo</div>
@@ -861,8 +1059,9 @@
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$44.000</span><span class="price">$42.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-master-cat-20kg-master-cat-adulto-20kg-sabor-salmon" data-pname="Master Cat Adulto 20kg - Sabor Salmón" data-pprice="42000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Master Cat Adulto 20kg</div>
       <div class="desc">Sabor Salmón</div>
@@ -871,48 +1070,53 @@
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$44.000</span><span class="price">$42.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Champion Cat 20kg</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-champion-cat-20kg-champion-cat-gatito-20kg-pollo-y-leche" data-pname="Champion Cat Gatito 20kg - Pollo y Leche" data-pprice="42000" data-punit="bolsa 20kg">
       <div class="name">Champion Cat Gatito 20kg</div>
       <div class="desc">Pollo y Leche</div>
       <div class="price-row">
         <span class="unit">bolsa 20kg</span>
         <span class="price">$42.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-champion-cat-20kg-champion-cat-adulto-20kg-pescado" data-pname="Champion Cat Adulto 20kg - Pescado" data-pprice="42000" data-punit="bolsa 20kg">
       <div class="name">Champion Cat Adulto 20kg</div>
       <div class="desc">Pescado</div>
       <div class="price-row">
         <span class="unit">bolsa 20kg</span>
         <span class="price">$42.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-champion-cat-20kg-champion-cat-adulto-20kg-pollo" data-pname="Champion Cat Adulto 20kg - Pollo" data-pprice="42000" data-punit="bolsa 20kg">
       <div class="name">Champion Cat Adulto 20kg</div>
       <div class="desc">Pollo</div>
       <div class="price-row">
         <span class="unit">bolsa 20kg</span>
         <span class="price">$42.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-champion-cat-20kg-champion-cat-adulto-20kg-carne" data-pname="Champion Cat Adulto 20kg - Carne" data-pprice="42000" data-punit="bolsa 20kg">
       <div class="name">Champion Cat Adulto 20kg</div>
       <div class="desc">Carne</div>
       <div class="price-row">
         <span class="unit">bolsa 20kg</span>
         <span class="price">$42.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Bokato Gato</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-bokato-gato-bokato-gato-7kg-super-premium" data-pname="Bokato Gato 7kg - Súper Premium" data-pprice="34000" data-punit="bolsa 7kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Bokato Gato 7kg</div>
       <div class="desc">Súper Premium</div>
@@ -920,85 +1124,94 @@
         <span class="unit">bolsa 7kg</span>
         <span><span class="old-price">$38.100</span><span class="price">$34.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Masko</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-masko-masko-gato-10kg-gatito-y-adulto" data-pname="Masko Gato 10kg - Gatito y Adulto" data-pprice="16000" data-punit="bolsa 10kg">
       <div class="name">Masko Gato 10kg</div>
       <div class="desc">Gatito y Adulto</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$16.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card">
+    <div class="card" data-pid="gatos-masko-masko-adulto-25kg-carne-y-cereales" data-pname="Masko Adulto 25kg - Carne y Cereales" data-pprice="30000" data-punit="bolsa 25kg">
       <div class="name">Masko Adulto 25kg</div>
       <div class="desc">Carne y Cereales</div>
       <div class="price-row">
         <span class="unit">bolsa 25kg</span>
         <span class="price">$30.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-masko-masko-gato-25kg-gatito-y-adulto" data-pname="Masko Gato 25kg - Gatito y Adulto" data-pprice="35000" data-punit="bolsa 25kg">
       <div class="name">Masko Gato 25kg</div>
       <div class="desc">Gatito y Adulto</div>
       <div class="price-row">
         <span class="unit">bolsa 25kg</span>
         <span class="price">$35.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Fit Fórmula Gato</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-fit-formula-gato-fit-formula-gato-10kg" data-pname="Fit Fórmula Gato 10kg" data-pprice="27000" data-punit="bolsa 10kg">
       <div class="name">Fit Fórmula Gato 10kg</div>
       <div class="extra">Granel: $2.900 x kilo</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$27.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Nomade Gato</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-nomade-gato-nomade-gato-10kg" data-pname="Nomade Gato 10kg" data-pprice="27000" data-punit="bolsa 10kg">
       <div class="name">Nomade Gato 10kg</div>
       <div class="price-row">
         <span class="unit">bolsa 10kg</span>
         <span class="price">$27.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Royal Canin 1,5kg</h3>
   <div class="products">
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-royal-canin-1-5kg-royal-canin-urinary-s-o-1-5kg" data-pname="Royal Canin Urinary S/O 1,5kg" data-pprice="19500" data-punit="bolsa 1,5kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Royal Canin Urinary S/O 1,5kg</div>
       <div class="price-row">
         <span class="unit">bolsa 1,5kg</span>
         <span><span class="old-price">$21.500</span><span class="price">$19.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-royal-canin-1-5kg-royal-canin-gato-urinary-care-1-5kg" data-pname="Royal Canin Gato Urinary Care 1,5kg" data-pprice="19500" data-punit="bolsa 1,5kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Royal Canin Gato Urinary Care 1,5kg</div>
       <div class="price-row">
         <span class="unit">bolsa 1,5kg</span>
         <span><span class="old-price">$21.500</span><span class="price">$19.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos">
+    <div class="card gatos" data-pid="gatos-royal-canin-1-5kg-royal-canin-indoor-1-5kg" data-pname="Royal Canin Indoor 1,5kg" data-pprice="16500" data-punit="bolsa 1,5kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Royal Canin Indoor 1,5kg</div>
       <div class="price-row">
         <span class="unit">bolsa 1,5kg</span>
         <span><span class="old-price">$19.500</span><span class="price">$16.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
@@ -1006,111 +1219,123 @@
 
   <h3 class="sub-title">Whiskas Pouch <span class="type-badge">Sobre 85g</span></h3>
   <div class="products">
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-whiskas-pouch-whiskas-gatito-carne-display-12-unidades" data-pname="Whiskas Gatito Carne - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Whiskas Gatito Carne<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-whiskas-pouch-whiskas-adulto-pavo-display-12-unidades" data-pname="Whiskas Adulto Pavo - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Whiskas Adulto Pavo<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-whiskas-pouch-whiskas-adulto-pollo-display-12-unidades" data-pname="Whiskas Adulto Pollo - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Whiskas Adulto Pollo<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-whiskas-pouch-whiskas-adulto-sardina-display-12-unidades" data-pname="Whiskas Adulto Sardina - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Whiskas Adulto Sardina<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-whiskas-pouch-whiskas-adulto-carne-display-12-unidades" data-pname="Whiskas Adulto Carne - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Whiskas Adulto Carne<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-whiskas-pouch-whiskas-adulto-salmon-display-12-unidades" data-pname="Whiskas Adulto Salmón - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Whiskas Adulto Salmón<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Pedigree Pouch <span class="type-badge">Sobre</span></h3>
   <div class="products">
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-pedigree-pouch-pedigree-cachorro-carne-display-12-unidades" data-pname="Pedigree Cachorro Carne - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Pedigree Cachorro Carne<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-pedigree-pouch-pedigree-adulto-r-p-pollo-display-12-unidades" data-pname="Pedigree Adulto R/P Pollo - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Pedigree Adulto R/P Pollo<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-pedigree-pouch-pedigree-adulto-r-p-carne-display-12-unidades" data-pname="Pedigree Adulto R/P Carne - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Pedigree Adulto R/P Carne<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-pedigree-pouch-pedigree-adulto-pollo-display-12-unidades" data-pname="Pedigree Adulto Pollo - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Pedigree Adulto Pollo<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-pedigree-pouch-pedigree-adulto-carne-display-12-unidades" data-pname="Pedigree Adulto Carne - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Pedigree Adulto Carne<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-pedigree-pouch-pedigree-senior-carne-display-12-unidades" data-pname="Pedigree Senior Carne - Display 12 unidades" data-pprice="7200" data-punit="c/u">
       <div class="name">Pedigree Senior Carne<span class="type-badge">Sobre</span></div>
       <div class="desc">Display 12 unidades</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span class="price">$7.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Latas Champion 315g <span class="type-badge">Lata</span></h3>
   <div class="products">
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-latas-champion-315g-lata-champion-cat-315g-sabor-pescado" data-pname="Lata Champion Cat 315g - Sabor Pescado" data-pprice="1400" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Lata Champion Cat 315g<span class="type-badge">Lata</span></div>
       <div class="desc">Sabor Pescado</div>
@@ -1118,8 +1343,9 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-latas-champion-315g-lata-champion-dog-315g-adulto-carne" data-pname="Lata Champion Dog 315g - Adulto Carne" data-pprice="1400" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Lata Champion Dog 315g<span class="type-badge">Lata</span></div>
       <div class="desc">Adulto Carne</div>
@@ -1127,8 +1353,9 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card humedo">
+    <div class="card humedo" data-pid="humedo-latas-champion-315g-lata-champion-dog-315g-cachorro-pollo" data-pname="Lata Champion Dog 315g - Cachorro Pollo" data-pprice="1400" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Lata Champion Dog 315g<span class="type-badge">Lata</span></div>
       <div class="desc">Cachorro Pollo</div>
@@ -1136,12 +1363,13 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Lata Fit Fórmula Gato Gourmet 80g <span class="type-badge">Lata</span></h3>
   <div class="products">
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-lata-fit-formula-gato-gourmet-80g-fit-formula-gato-gourmet-atun-y-camaron" data-pname="Fit Fórmula Gato Gourmet - Atún y camarón" data-pprice="1400" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Fit Fórmula Gato Gourmet<span class="type-badge">Lata</span></div>
       <div class="desc">Atún y camarón</div>
@@ -1149,8 +1377,9 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card gatos humedo">
+    <div class="card gatos humedo" data-pid="humedo-lata-fit-formula-gato-gourmet-80g-fit-formula-gato-gourmet-atun-y-palitos-de-cangrejo" data-pname="Fit Fórmula Gato Gourmet - Atún y palitos de cangrejo" data-pprice="1400" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Fit Fórmula Gato Gourmet<span class="type-badge">Lata</span></div>
       <div class="desc">Atún y palitos de cangrejo</div>
@@ -1158,6 +1387,7 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$1.500</span><span class="price">$1.400</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
@@ -1165,51 +1395,56 @@
 
   <h3 class="sub-title">Snack Fit Fórmula 400g</h3>
   <div class="products">
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-snack-fit-formula-400g-snack-fit-formula-salchicha-de-pato" data-pname="Snack Fit Fórmula - Salchicha de pato" data-pprice="10000" data-punit="400g">
       <div class="name">Snack Fit Fórmula</div>
       <div class="desc">Salchicha de pato</div>
       <div class="price-row">
         <span class="unit">400g</span>
         <span class="price">$10.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-snack-fit-formula-400g-snack-fit-formula-trutro-de-pollo" data-pname="Snack Fit Fórmula - Trutro de pollo" data-pprice="10000" data-punit="400g">
       <div class="name">Snack Fit Fórmula</div>
       <div class="desc">Trutro de pollo</div>
       <div class="price-row">
         <span class="unit">400g</span>
         <span class="price">$10.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-snack-fit-formula-400g-snack-fit-formula-espiral-de-salmon" data-pname="Snack Fit Fórmula - Espiral de salmón" data-pprice="10000" data-punit="400g">
       <div class="name">Snack Fit Fórmula</div>
       <div class="desc">Espiral de salmón</div>
       <div class="price-row">
         <span class="unit">400g</span>
         <span class="price">$10.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-snack-fit-formula-400g-snack-fit-formula-costillitas-de-cordero" data-pname="Snack Fit Fórmula - Costillitas de cordero" data-pprice="10000" data-punit="400g">
       <div class="name">Snack Fit Fórmula</div>
       <div class="desc">Costillitas de cordero</div>
       <div class="price-row">
         <span class="unit">400g</span>
         <span class="price">$10.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Otros snacks</h3>
   <div class="products">
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-otros-snacks-dentastix-razas-grandes-7-unidades" data-pname="Dentastix - Razas grandes · 7 unidades" data-pprice="3000" data-punit="pack">
       <div class="name">Dentastix</div>
       <div class="desc">Razas grandes · 7 unidades</div>
       <div class="price-row">
         <span class="unit">pack</span>
         <span class="price">$3.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-otros-snacks-snack-animal-planet-trozos-de-salmon-con-pollo-65g" data-pname="Snack Animal Planet - Trozos de salmón con pollo · 65g" data-pprice="2500" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Snack Animal Planet</div>
       <div class="desc">Trozos de salmón con pollo · 65g</div>
@@ -1217,8 +1452,9 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$2.990</span><span class="price">$2.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-otros-snacks-snack-animal-planet-trozos-de-vacuno-con-pollo-100g" data-pname="Snack Animal Planet - Trozos de vacuno con pollo · 100g" data-pprice="2500" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Snack Animal Planet</div>
       <div class="desc">Trozos de vacuno con pollo · 100g</div>
@@ -1226,58 +1462,65 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$2.990</span><span class="price">$2.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-otros-snacks-snack-femur-de-cerdo-wild-bites" data-pname="Snack Fémur de Cerdo - Wild Bites" data-pprice="3000" data-punit="unidad">
       <div class="name">Snack Fémur de Cerdo</div>
       <div class="desc">Wild Bites</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$3.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Churu (perro y gato) <span class="type-badge">Display 4un</span></h3>
   <div class="products">
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-churu-perro-y-gato-churu-atun-con-almeja" data-pname="Churu Atún con Almeja" data-pprice="2200" data-punit="c/u">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Churu Atún con Almeja</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-churu-perro-y-gato-churu-atun-con-camaron" data-pname="Churu Atún con Camarón" data-pprice="2200" data-punit="c/u">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Churu Atún con Camarón</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-churu-perro-y-gato-churu-pollo-con-salmon" data-pname="Churu Pollo con Salmón" data-pprice="2200" data-punit="c/u">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Churu Pollo con Salmón</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-churu-perro-y-gato-churu-pollo-con-atun" data-pname="Churu Pollo con Atún" data-pprice="2200" data-punit="c/u">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Churu Pollo con Atún</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card snacks">
+    <div class="card snacks" data-pid="snacks-churu-perro-y-gato-churu-pollo" data-pname="Churu Pollo" data-pprice="2200" data-punit="c/u">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Churu Pollo</div>
       <div class="price-row">
         <span class="unit">c/u</span>
         <span><span class="old-price">$2.990</span><span class="price">$2.200</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
@@ -1285,51 +1528,56 @@
 
   <h3 class="sub-title">Nexgard Perros</h3>
   <div class="products">
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-nexgard-perros-nexgard-2-4kg-3-comprimidos" data-pname="Nexgard 2 - 4kg - 3 comprimidos" data-pprice="19000" data-punit="caja">
       <div class="name">Nexgard 2 - 4kg</div>
       <div class="desc">3 comprimidos</div>
       <div class="price-row">
         <span class="unit">caja</span>
         <span class="price">$19.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-nexgard-perros-nexgard-4-10kg-3-comprimidos" data-pname="Nexgard 4 - 10kg - 3 comprimidos" data-pprice="21000" data-punit="caja">
       <div class="name">Nexgard 4 - 10kg</div>
       <div class="desc">3 comprimidos</div>
       <div class="price-row">
         <span class="unit">caja</span>
         <span class="price">$21.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-nexgard-perros-nexgard-10-25kg-3-comprimidos" data-pname="Nexgard 10 - 25kg - 3 comprimidos" data-pprice="23000" data-punit="caja">
       <div class="name">Nexgard 10 - 25kg</div>
       <div class="desc">3 comprimidos</div>
       <div class="price-row">
         <span class="unit">caja</span>
         <span class="price">$23.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-nexgard-perros-nexgard-25-50kg-3-comprimidos" data-pname="Nexgard 25 - 50kg - 3 comprimidos" data-pprice="33000" data-punit="caja">
       <div class="name">Nexgard 25 - 50kg</div>
       <div class="desc">3 comprimidos</div>
       <div class="price-row">
         <span class="unit">caja</span>
         <span class="price">$33.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-nexgard-perros-pipeta-sinpul-2ml-elimina-pulgas-y-garrapatas" data-pname="Pipeta Sinpul 2ml - Elimina pulgas y garrapatas" data-pprice="3000" data-punit="unidad">
       <div class="name">Pipeta Sinpul 2ml</div>
       <div class="desc">Elimina pulgas y garrapatas</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$3.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Pipetas Gato</h3>
   <div class="products">
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-pipetas-gato-pipeta-gato-fiprodrag-antiparasitario-externo" data-pname="Pipeta Gato Fiprodrag - Antiparasitario externo" data-pprice="5000" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Pipeta Gato Fiprodrag</div>
       <div class="desc">Antiparasitario externo</div>
@@ -1337,20 +1585,22 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$7.000</span><span class="price">$5.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-pipetas-gato-nexgard-combo-pipeta-gato-antiparasitario-interno-y-externo-2-5-7-5kg" data-pname="Nexgard Combo Pipeta Gato - Antiparasitario interno y externo · 2,5-7,5kg" data-pprice="15000" data-punit="unidad">
       <div class="name">Nexgard Combo Pipeta Gato</div>
       <div class="desc">Antiparasitario interno y externo · 2,5-7,5kg</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$15.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Collares y shampoo antipulgas</h3>
   <div class="products">
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-collares-y-shampoo-antipulgas-collar-gato-sinpulkill-controla-pulgas-x-4-meses" data-pname="Collar Gato Sinpulkill - Controla pulgas x 4 meses" data-pprice="7500" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Collar Gato Sinpulkill</div>
       <div class="desc">Controla pulgas x 4 meses</div>
@@ -1358,8 +1608,9 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$8.000</span><span class="price">$7.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-collares-y-shampoo-antipulgas-collar-perro-sinpulkill-pulgas-x-4-meses-garrapatas-x-3-meses" data-pname="Collar Perro Sinpulkill - Pulgas x 4 meses · garrapatas x 3 meses" data-pprice="7500" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Collar Perro Sinpulkill</div>
       <div class="desc">Pulgas x 4 meses · garrapatas x 3 meses</div>
@@ -1367,42 +1618,47 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$8.000</span><span class="price">$7.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-collares-y-shampoo-antipulgas-shampoo-dorazel-plus-300ml-elimina-pulgas-y-garrapatas" data-pname="Shampoo Dorazel Plus 300ml - Elimina pulgas y garrapatas" data-pprice="5000" data-punit="frasco">
       <div class="name">Shampoo Dorazel Plus 300ml</div>
       <div class="desc">Elimina pulgas y garrapatas</div>
       <div class="price-row">
         <span class="unit">frasco</span>
         <span class="price">$5.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Antiparasitario Interno</h3>
   <div class="products">
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-antiparasitario-interno-mebermic-comprimido-antiparasitario-interno-hasta-10kg" data-pname="Mebermic Comprimido - Antiparasitario interno · hasta 10kg" data-pprice="1200" data-punit="unidad">
       <div class="name">Mebermic Comprimido</div>
       <div class="desc">Antiparasitario interno · hasta 10kg</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$1.200</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-antiparasitario-interno-invermic-gato-gotas-10ml-antiparasitario-interno" data-pname="Invermic Gato Gotas 10ml - Antiparasitario interno" data-pprice="2500" data-punit="frasco">
       <div class="name">Invermic Gato Gotas 10ml</div>
       <div class="desc">Antiparasitario interno</div>
       <div class="price-row">
         <span class="unit">frasco</span>
         <span class="price">$2.500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card antiparasitarios">
+    <div class="card antiparasitarios" data-pid="antiparasitarios-antiparasitario-interno-invermic-perro-gotas-10ml-antiparasitario-interno" data-pname="Invermic Perro Gotas 10ml - Antiparasitario interno" data-pprice="2500" data-punit="frasco">
       <div class="name">Invermic Perro Gotas 10ml</div>
       <div class="desc">Antiparasitario interno</div>
       <div class="price-row">
         <span class="unit">frasco</span>
         <span class="price">$2.500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
@@ -1410,32 +1666,35 @@
 
   <h3 class="sub-title">Shampoo Canish y Tidy</h3>
   <div class="products">
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-shampoo-canish-y-tidy-shampoo-hipoalergenico-390ml" data-pname="Shampoo Hipoalergénico 390ml" data-pprice="4000" data-punit="frasco">
       <div class="name">Shampoo Hipoalergénico 390ml</div>
       <div class="price-row">
         <span class="unit">frasco</span>
         <span class="price">$4.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-shampoo-canish-y-tidy-shampoo-extra-brillo-390ml" data-pname="Shampoo Extra Brillo 390ml" data-pprice="4000" data-punit="frasco">
       <div class="name">Shampoo Extra Brillo 390ml</div>
       <div class="price-row">
         <span class="unit">frasco</span>
         <span class="price">$4.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-shampoo-canish-y-tidy-shampoo-balsamico-390ml" data-pname="Shampoo Balsámico 390ml" data-pprice="4000" data-punit="frasco">
       <div class="name">Shampoo Balsámico 390ml</div>
       <div class="price-row">
         <span class="unit">frasco</span>
         <span class="price">$4.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Arena Sanitaria</h3>
   <div class="products">
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-sanitaria-arena-turbo-clean-20kg-aglutinante-aroma-lavanda" data-pname="Arena Turbo Clean 20kg - Aglutinante · aroma lavanda" data-pprice="18000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Arena Turbo Clean 20kg</div>
       <div class="desc">Aglutinante · aroma lavanda</div>
@@ -1443,8 +1702,9 @@
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$20.000</span><span class="price">$18.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-sanitaria-arena-turbo-clean-10kg-aglutinante-aroma-lavanda" data-pname="Arena Turbo Clean 10kg - Aglutinante · aroma lavanda" data-pprice="10000" data-punit="bolsa 10kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Arena Turbo Clean 10kg</div>
       <div class="desc">Aglutinante · aroma lavanda</div>
@@ -1452,8 +1712,9 @@
         <span class="unit">bolsa 10kg</span>
         <span><span class="old-price">$12.000</span><span class="price">$10.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-sanitaria-arena-turbo-clean-4kg-aglutinante-aroma-lavanda" data-pname="Arena Turbo Clean 4kg - Aglutinante · aroma lavanda" data-pprice="4500" data-punit="bolsa 4kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Arena Turbo Clean 4kg</div>
       <div class="desc">Aglutinante · aroma lavanda</div>
@@ -1461,8 +1722,9 @@
         <span class="unit">bolsa 4kg</span>
         <span><span class="old-price">$5.000</span><span class="price">$4.500</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-sanitaria-arena-misifus-20kg-aglutinante-aroma-cafe-moka" data-pname="Arena Mísifus 20kg - Aglutinante · aroma café moka" data-pprice="14000" data-punit="bolsa 20kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Arena Mísifus 20kg</div>
       <div class="desc">Aglutinante · aroma café moka</div>
@@ -1470,8 +1732,9 @@
         <span class="unit">bolsa 20kg</span>
         <span><span class="old-price">$16.000</span><span class="price">$14.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-sanitaria-arena-fit-formula-10kg-aglomerante-aroma-lavanda" data-pname="Arena Fit Fórmula 10kg - Aglomerante · aroma lavanda" data-pprice="11000" data-punit="bolsa 10kg">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Arena Fit Fórmula 10kg</div>
       <div class="desc">Aglomerante · aroma lavanda</div>
@@ -1479,78 +1742,87 @@
         <span class="unit">bolsa 10kg</span>
         <span><span class="old-price">$13.000</span><span class="price">$11.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Arena TopK9</h3>
   <div class="products">
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-topk9-arena-topk9-ecologica-2kg-aroma-lavanda" data-pname="Arena TopK9 Ecológica 2kg - Aroma lavanda" data-pprice="3000" data-punit="bolsa 2kg">
       <div class="name">Arena TopK9 Ecológica 2kg</div>
       <div class="desc">Aroma lavanda</div>
       <div class="price-row">
         <span class="unit">bolsa 2kg</span>
         <span class="price">$3.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-topk9-arena-topk9-2kg-aroma-natural-repelente-de-pulgas" data-pname="Arena TopK9 2kg - Aroma natural repelente de pulgas" data-pprice="3300" data-punit="bolsa 2kg">
       <div class="name">Arena TopK9 2kg</div>
       <div class="desc">Aroma natural repelente de pulgas</div>
       <div class="price-row">
         <span class="unit">bolsa 2kg</span>
         <span class="price">$3.300</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card higiene">
+    <div class="card higiene" data-pid="higiene-arena-topk9-arena-topk9-1-6kg-cristal-fino" data-pname="Arena TopK9 1,6kg - Cristal fino" data-pprice="6000" data-punit="bolsa 1,6kg">
       <div class="name">Arena TopK9 1,6kg</div>
       <div class="desc">Cristal fino</div>
       <div class="price-row">
         <span class="unit">bolsa 1,6kg</span>
         <span class="price">$6.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h2 class="section-title" id="accesorios"><span class="emoji">🍽️</span> Accesorios</h2>
   <div class="products">
-    <div class="card accesorios">
+    <div class="card accesorios" data-pid="accesorios-plato-chico-plato-cuadrado-n-1" data-pname="Plato chico - Plato cuadrado N°1" data-pprice="1000" data-punit="unidad">
       <div class="name">Plato chico</div>
       <div class="desc">Plato cuadrado N°1</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$1.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card accesorios">
+    <div class="card accesorios" data-pid="accesorios-plato-mediano-plato-cuadrado" data-pname="Plato mediano - Plato cuadrado" data-pprice="1500" data-punit="unidad">
       <div class="name">Plato mediano</div>
       <div class="desc">Plato cuadrado</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$1.500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card accesorios">
+    <div class="card accesorios" data-pid="accesorios-plato-grande-plato-cuadrado" data-pname="Plato grande - Plato cuadrado" data-pprice="2000" data-punit="unidad">
       <div class="name">Plato grande</div>
       <div class="desc">Plato cuadrado</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$2.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card accesorios">
+    <div class="card accesorios" data-pid="accesorios-poruna-chica" data-pname="Poruña chica" data-pprice="500" data-punit="unidad">
       <div class="name">Poruña chica</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card accesorios">
+    <div class="card accesorios" data-pid="accesorios-poruna-grande" data-pname="Poruña grande" data-pprice="1000" data-punit="unidad">
       <div class="name">Poruña grande</div>
       <div class="price-row">
         <span class="unit">unidad</span>
         <span class="price">$1.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card accesorios">
+    <div class="card accesorios" data-pid="accesorios-arenero-top-k9-clasico-incluye-pala-y-plato-40x29x14cm" data-pname="Arenero Top-K9 Clásico - Incluye pala y plato · 40x29x14cm" data-pprice="8000" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Arenero Top-K9 Clásico</div>
       <div class="desc">Incluye pala y plato · 40x29x14cm</div>
@@ -1558,6 +1830,7 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$10.000</span><span class="price">$8.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
@@ -1565,7 +1838,7 @@
 
   <h3 class="sub-title">Papel higiénico</h3>
   <div class="products">
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-papel-higienico-noble-22-metros-d-h-60-rollos-9-85-el-metro" data-pname="Papel Higiénico Noble - 22 metros D/H · 60 rollos · $9,85 el metro" data-pprice="13000" data-punit="pack">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Papel Higiénico Noble</div>
       <div class="desc">22 metros D/H · 60 rollos · $9,85 el metro</div>
@@ -1573,8 +1846,9 @@
         <span class="unit">pack</span>
         <span><span class="old-price">$14.000</span><span class="price">$13.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-papel-higienico-swan-20-metros-d-h-48-rollos-11-46-el-metro" data-pname="Papel Higiénico Swan - 20 metros D/H · 48 rollos · $11,46 el metro" data-pprice="11000" data-punit="pack">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Papel Higiénico Swan</div>
       <div class="desc">20 metros D/H · 48 rollos · $11,46 el metro</div>
@@ -1582,60 +1856,67 @@
         <span class="unit">pack</span>
         <span><span class="old-price">$11.500</span><span class="price">$11.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-papel-higienico-swan-50-metros-d-h-32-rollos-doble-hoja-11-57-el-metro" data-pname="Papel Higiénico Swan - 50 metros D/H · 32 rollos doble hoja · $11,57 el metro" data-pprice="18500" data-punit="pack">
       <div class="name">Papel Higiénico Swan</div>
       <div class="desc">50 metros D/H · 32 rollos doble hoja · $11,57 el metro</div>
       <div class="price-row">
         <span class="unit">pack</span>
         <span class="price">$18.500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-papel-higienico-ovella-50-metros-d-h-32-rollos-11-25-el-metro" data-pname="Papel Higiénico Ovella - 50 metros D/H · 32 rollos · $11,25 el metro" data-pprice="18000" data-punit="pack">
       <div class="name">Papel Higiénico Ovella</div>
       <div class="desc">50 metros D/H · 32 rollos · $11,25 el metro</div>
       <div class="price-row">
         <span class="unit">pack</span>
         <span class="price">$18.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-papel-higienico-confort-22-metros-d-h-48-rollos-11-84-el-metro" data-pname="Papel Higiénico Confort - 22 metros D/H · 48 rollos · $11,84 el metro" data-pprice="12500" data-punit="pack">
       <div class="name">Papel Higiénico Confort</div>
       <div class="desc">22 metros D/H · 48 rollos · $11,84 el metro</div>
       <div class="price-row">
         <span class="unit">pack</span>
         <span class="price">$12.500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-papel-higienico-elite-50-metros-d-h-32-rollos-12-82-el-metro" data-pname="Papel Higiénico Elite - 50 metros D/H · 32 rollos · $12,82 el metro" data-pprice="20500" data-punit="pack">
       <div class="name">Papel Higiénico Elite</div>
       <div class="desc">50 metros D/H · 32 rollos · $12,82 el metro</div>
       <div class="price-row">
         <span class="unit">pack</span>
         <span class="price">$20.500</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-toalla-nova-gigante-70-metros-d-h" data-pname="Toalla Nova Gigante - 70 metros D/H" data-pprice="2800" data-punit="1 unidad">
       <div class="name">Toalla Nova Gigante</div>
       <div class="desc">70 metros D/H</div>
       <div class="price-row">
         <span class="unit">1 unidad</span>
         <span class="price">$2.800</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-papel-higienico-toalla-nova-gigante-70-metros-d-h-2-600-c-u" data-pname="Toalla Nova Gigante - 70 metros D/H · $2.600 c/u" data-pprice="20800" data-punit="pack 8un">
       <div class="name">Toalla Nova Gigante</div>
       <div class="desc">70 metros D/H · $2.600 c/u</div>
       <div class="price-row">
         <span class="unit">pack 8un</span>
         <span class="price">$20.800</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Aseo y varios</h3>
   <div class="products">
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-aseo-y-varios-detergente-ariel-liquido-downy-concentrado" data-pname="Detergente Ariel Líquido Downy - Concentrado" data-pprice="6900" data-punit="unidad">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Detergente Ariel Líquido Downy</div>
       <div class="desc">Concentrado</div>
@@ -1643,8 +1924,9 @@
         <span class="unit">unidad</span>
         <span><span class="old-price">$7.900</span><span class="price">$6.900</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-aseo-y-varios-papelillos-ronson-premium-quality-display-25-librillos-de-50-hojas" data-pname="Papelillos Ronson Premium Quality - Display 25 librillos de 50 hojas" data-pprice="7000" data-punit="display">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Papelillos Ronson Premium Quality</div>
       <div class="desc">Display 25 librillos de 50 hojas</div>
@@ -1652,20 +1934,22 @@
         <span class="unit">display</span>
         <span><span class="old-price">$10.000</span><span class="price">$7.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-aseo-y-varios-encendedor-ronson-display-20un-245-c-u" data-pname="Encendedor Ronson - Display 20un · $245 c/u" data-pprice="4900" data-punit="display">
       <div class="name">Encendedor Ronson</div>
       <div class="desc">Display 20un · $245 c/u</div>
       <div class="price-row">
         <span class="unit">display</span>
         <span class="price">$4.900</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h3 class="sub-title">Cuidado adulto mayor</h3>
   <div class="products">
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-cuidado-adulto-mayor-pants-para-adulto-talla-g-xg-30-unidades" data-pname="Pants para Adulto - Talla G/XG · 30 unidades" data-pprice="17000" data-punit="pack">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Pants para Adulto</div>
       <div class="desc">Talla G/XG · 30 unidades</div>
@@ -1673,8 +1957,9 @@
         <span class="unit">pack</span>
         <span><span class="old-price">$18.000</span><span class="price">$17.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card hogar">
+    <div class="card hogar" data-pid="hogar-cuidado-adulto-mayor-panales-para-adulto-premium-talla-g-20-unidades" data-pname="Pañales para Adulto Premium - Talla G · 20 unidades" data-pprice="13000" data-punit="pack">
       <div class="oferta-badge">OFERTA</div>
       <div class="name">Pañales para Adulto Premium</div>
       <div class="desc">Talla G · 20 unidades</div>
@@ -1682,54 +1967,60 @@
         <span class="unit">pack</span>
         <span><span class="old-price">$14.000</span><span class="price">$13.000</span></span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h2 class="section-title" id="palta"><span class="emoji">🥑</span> Palta</h2>
   <div class="products">
-    <div class="card palta">
+    <div class="card palta" data-pid="palta-palta-hass-peruana-por-kilo" data-pname="Palta Hass Peruana - Por kilo" data-pprice="3000" data-punit="por kg">
       <div class="name">Palta Hass Peruana</div>
       <div class="desc">Por kilo</div>
       <div class="price-row">
         <span class="unit">por kg</span>
         <span class="price">$3.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
   <h2 class="section-title" id="huevos"><span class="emoji">🥚</span> Huevos</h2>
   <div class="products">
-    <div class="card huevos">
+    <div class="card huevos" data-pid="huevos-huevo-extra-blanco-bandeja-30-unidades" data-pname="Huevo Extra Blanco - Bandeja 30 unidades" data-pprice="6000" data-punit="bandeja">
       <div class="name">Huevo Extra Blanco</div>
       <div class="desc">Bandeja 30 unidades</div>
       <div class="price-row">
         <span class="unit">bandeja</span>
         <span class="price">$6.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card huevos">
+    <div class="card huevos" data-pid="huevos-huevo-extra-blanco-caja-180-unidades" data-pname="Huevo Extra Blanco - Caja 180 unidades" data-pprice="34000" data-punit="caja">
       <div class="name">Huevo Extra Blanco</div>
       <div class="desc">Caja 180 unidades</div>
       <div class="price-row">
         <span class="unit">caja</span>
         <span class="price">$34.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card huevos">
+    <div class="card huevos" data-pid="huevos-huevo-primera-blanco-180-unidades" data-pname="Huevo Primera Blanco - 180 unidades" data-pprice="29000" data-punit="caja">
       <div class="name">Huevo Primera Blanco</div>
       <div class="desc">180 unidades</div>
       <div class="price-row">
         <span class="unit">caja</span>
         <span class="price">$29.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
-    <div class="card huevos">
+    <div class="card huevos" data-pid="huevos-huevo-segunda-blanco-180-unidades" data-pname="Huevo Segunda Blanco - 180 unidades" data-pprice="24000" data-punit="caja">
       <div class="name">Huevo Segunda Blanco</div>
       <div class="desc">180 unidades</div>
       <div class="price-row">
         <span class="unit">caja</span>
         <span class="price">$24.000</span>
       </div>
+      <button type="button" class="add-cart-btn" aria-label="Agregar al pedido">+ Agregar</button>
     </div>
   </div>
 
@@ -1739,6 +2030,28 @@
   PetFoodAngol · Argentina 1916 · Despacho a domicilio en toda la zona urbana de Angol
   <a class="foot-phone" href="tel:90957472">📞 90957472</a>
 </footer>
+
+<button type="button" class="cart-fab" id="cartFab" hidden>
+  🛒 Mi pedido <span class="cart-count" id="cartCount">0</span>
+</button>
+
+<div class="cart-overlay" id="cartOverlay" hidden></div>
+
+<aside class="cart-panel" id="cartPanel" hidden>
+  <div class="cart-panel-header">
+    <h2>Mi pedido</h2>
+    <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-panel-footer">
+    <div class="cart-total">
+      <span>Total aprox.</span>
+      <span id="cartTotal">$0</span>
+    </div>
+    <a href="#" class="cart-send-btn" id="cartSendBtn">💬 Pedir por WhatsApp</a>
+    <button type="button" class="cart-clear-btn" id="cartClearBtn">Vaciar pedido</button>
+  </div>
+</aside>
 
 <script>
 (function(){
@@ -1816,6 +2129,163 @@
       }
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  var CART_KEY = 'petfoodangol_cart_v1';
+  var WHATSAPP_NUMBER = '56990957472';
+
+  function loadCart(){
+    try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+  function formatCLP(n){ return '$' + Number(n).toLocaleString('es-CL'); }
+
+  var cart = loadCart();
+
+  var fab = document.getElementById('cartFab');
+  var cartCount = document.getElementById('cartCount');
+  var overlay = document.getElementById('cartOverlay');
+  var panel = document.getElementById('cartPanel');
+  var itemsEl = document.getElementById('cartItems');
+  var totalEl = document.getElementById('cartTotal');
+  var closeBtn = document.getElementById('cartCloseBtn');
+  var sendBtn = document.getElementById('cartSendBtn');
+  var clearBtn = document.getElementById('cartClearBtn');
+
+  function totalCount(){
+    return Object.keys(cart).reduce(function(sum, id){ return sum + cart[id].qty; }, 0);
+  }
+  function totalPrice(){
+    return Object.keys(cart).reduce(function(sum, id){ return sum + cart[id].qty * cart[id].price; }, 0);
+  }
+
+  function esc(str){
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function updateAddButtons(){
+    document.querySelectorAll('.add-cart-btn').forEach(function(btn){
+      var card = btn.closest('.card');
+      var pid = card.getAttribute('data-pid');
+      if (cart[pid]){
+        btn.textContent = '✓ En el pedido (' + cart[pid].qty + ')';
+        btn.classList.add('in-cart');
+      } else {
+        btn.textContent = '+ Agregar';
+        btn.classList.remove('in-cart');
+      }
+    });
+  }
+
+  function renderPanel(){
+    var ids = Object.keys(cart);
+    fab.hidden = ids.length === 0;
+    cartCount.textContent = totalCount();
+
+    if (ids.length === 0){
+      itemsEl.innerHTML = '<p class="cart-empty">Todavía no agregaste productos.</p>';
+    } else {
+      itemsEl.innerHTML = ids.map(function(id){
+        var item = cart[id];
+        return '<div class="cart-item" data-pid="' + esc(id) + '">' +
+          '<div>' +
+          '<div class="cart-item-name">' + esc(item.name) + '</div>' +
+          '<div class="cart-item-unit">' + esc(item.unit) + '</div>' +
+          '<div class="cart-item-price">' + formatCLP(item.price) + ' c/u ' +
+          '<button type="button" class="cart-remove" data-action="remove">quitar</button></div>' +
+          '</div>' +
+          '<div class="cart-qty">' +
+          '<button type="button" data-action="dec" aria-label="Quitar uno">-</button>' +
+          '<span>' + item.qty + '</span>' +
+          '<button type="button" data-action="inc" aria-label="Agregar uno">+</button>' +
+          '</div>' +
+          '</div>';
+      }).join('');
+    }
+    totalEl.textContent = formatCLP(totalPrice());
+    updateAddButtons();
+  }
+
+  function addToCart(pid, name, price, unit){
+    if (!pid) return;
+    if (!cart[pid]) cart[pid] = { name: name, price: price, unit: unit, qty: 0 };
+    cart[pid].qty += 1;
+    saveCart();
+    renderPanel();
+  }
+  function changeQty(pid, delta){
+    if (!cart[pid]) return;
+    cart[pid].qty += delta;
+    if (cart[pid].qty <= 0) delete cart[pid];
+    saveCart();
+    renderPanel();
+  }
+  function removeItem(pid){
+    delete cart[pid];
+    saveCart();
+    renderPanel();
+  }
+  function clearCart(){
+    cart = {};
+    saveCart();
+    renderPanel();
+    closePanel();
+  }
+  function openPanel(){ overlay.hidden = false; panel.hidden = false; }
+  function closePanel(){ overlay.hidden = true; panel.hidden = true; }
+
+  document.addEventListener('click', function(e){
+    var addBtn = e.target.closest('.add-cart-btn');
+    if (addBtn){
+      var card = addBtn.closest('.card');
+      addToCart(
+        card.getAttribute('data-pid'),
+        card.getAttribute('data-pname'),
+        Number(card.getAttribute('data-pprice')),
+        card.getAttribute('data-punit')
+      );
+      return;
+    }
+    var qtyBtn = e.target.closest('.cart-qty button');
+    if (qtyBtn){
+      var itemEl = qtyBtn.closest('.cart-item');
+      changeQty(itemEl.getAttribute('data-pid'), qtyBtn.getAttribute('data-action') === 'inc' ? 1 : -1);
+      return;
+    }
+    var removeBtn = e.target.closest('.cart-remove');
+    if (removeBtn){
+      removeItem(removeBtn.closest('.cart-item').getAttribute('data-pid'));
+      return;
+    }
+  });
+
+  fab.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+  clearBtn.addEventListener('click', clearCart);
+
+  sendBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    var ids = Object.keys(cart);
+    if (ids.length === 0) return;
+    var lines = ['Hola! Quiero pedir:', ''];
+    ids.forEach(function(id){
+      var item = cart[id];
+      lines.push('- ' + item.qty + 'x ' + item.name + ' (' + formatCLP(item.price) + ' c/u)');
+    });
+    lines.push('');
+    lines.push('Total aprox: ' + formatCLP(totalPrice()));
+    var text = encodeURIComponent(lines.join('\n'));
+    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text, '_blank');
+  });
+
+  renderPanel();
 })();
 </script>
 
