@@ -16,4 +16,9 @@ function verifyToken(req) {
   );
 }
 
-module.exports = { ensureToken, verifyToken };
+function rotateToken(req) {
+  req.session.csrfToken = crypto.randomBytes(24).toString('hex');
+  return req.session.csrfToken;
+}
+
+module.exports = { ensureToken, verifyToken, rotateToken };

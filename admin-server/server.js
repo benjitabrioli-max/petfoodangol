@@ -4,7 +4,7 @@ const session = require('express-session');
 const rateLimit = require('express-rate-limit');
 
 const { verifyLogin } = require('./lib/auth');
-const { ensureToken, verifyToken } = require('./lib/csrf');
+const { ensureToken, verifyToken, rotateToken } = require('./lib/csrf');
 const { loadProducts, saveProducts, slugify, findProduct } = require('./lib/data');
 const views = require('./lib/views');
 
@@ -42,8 +42,16 @@ function requireAuth(req, res, next) {
 
 function requireCsrf(req, res, next) {
   if (!verifyToken(req)) {
-    return res.status(403).send('Solicitud inválida (CSRF). Volvé atrás e intentá de nuevo.');
+    return res
+      .status(403)
+      .send(
+        'Este formulario ya fue enviado (o hiciste doble clic). Si tu cambio no se aplicó, ' +
+        '<a href="/admin">volvé al panel</a> e intentá de nuevo.'
+      );
   }
+  // Single-use token: rotate immediately so a duplicate/replayed submission
+  // (double-click, back-button resubmit) can't apply the same change twice.
+  rotateToken(req);
   next();
 }
 

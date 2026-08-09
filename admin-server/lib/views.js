@@ -90,6 +90,17 @@ ${opts.user ? `<header>
 <main>
 ${bodyHtml}
 </main>
+<script>
+  // Disable the submit button right after a form is submitted, so a double-click
+  // (or an impatient second tap) can't fire the same request twice.
+  document.addEventListener('submit', function (e) {
+    var btn = e.target.querySelector('button[type="submit"]');
+    if (!btn || btn.disabled) return;
+    btn.dataset.originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Guardando...';
+  });
+</script>
 </body>
 </html>`;
 }
