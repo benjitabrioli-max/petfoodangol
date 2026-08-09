@@ -88,17 +88,33 @@
   .contact-item .icon{
     font-size:1.3rem;
   }
-  .call-btn{
-    background:var(--green);
-    color:var(--white);
+  .cta-group{
+    display:flex;
+    gap:0.6rem;
+    flex-wrap:wrap;
+  }
+  .whatsapp-btn, .call-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
     text-decoration:none;
     font-weight:700;
     padding:0.75rem 1.4rem;
     border-radius:999px;
-    box-shadow:0 4px 10px rgba(92,122,74,0.35);
     white-space:nowrap;
   }
-  .call-btn:hover{background:#4a6339;}
+  .whatsapp-btn{
+    background:#25D366;
+    color:var(--white);
+    box-shadow:0 4px 10px rgba(37,211,102,0.35);
+  }
+  .whatsapp-btn:hover{background:#1fb257;}
+  .call-btn{
+    background:var(--white);
+    color:var(--brown-700);
+    border:1.5px solid var(--cream-2);
+  }
+  .call-btn:hover{background:var(--cream-2);}
 
   .notice{
     max-width:960px;
@@ -353,7 +369,9 @@
   @media (max-width:600px){
     header .logo{font-size:1.9rem;}
     .contact-bar{flex-direction:column;align-items:stretch;text-align:center;}
-    .call-btn{text-align:center;}
+    .contact-item{justify-content:center;}
+    .cta-group{flex-direction:column;}
+    .whatsapp-btn, .call-btn{justify-content:center;}
   }
 </style>
 </head>
@@ -377,13 +395,21 @@
     <span class="icon">🛵</span>
     <span>Despacho a domicilio en todo Angol</span>
   </div>
-  <a class="call-btn" href="tel:90957472">Llamar para pedir</a>
+  <div class="contact-item">
+    <span class="icon">💬</span>
+    <span>+56 9 9095 7472</span>
+  </div>
+  <div class="cta-group">
+    <a class="whatsapp-btn" href="https://wa.me/56990957472" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a>
+    <a class="call-btn" href="tel:90957472">Llamar</a>
+  </div>
 </div>
 
 <div class="notice">
   Esta página muestra precios de referencia. <strong>No se realizan compras online</strong> -
-  para pedir o retirar tu producto comunícate al
-  <strong><a href="tel:90957472">90957472</a></strong>.
+  para pedir o retirar tu producto escríbenos por
+  <strong><a href="https://wa.me/56990957472" target="_blank" rel="noopener">WhatsApp al +56 9 9095 7472</a></strong>
+  o llama al <strong><a href="tel:90957472">90957472</a></strong>.
 </div>
 
 <nav class="quick-nav">
