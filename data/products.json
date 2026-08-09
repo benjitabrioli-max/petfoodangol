@@ -19,7 +19,7 @@
               "oldPrice": 32000,
               "colorClass": "",
               "typeBadges": [],
-              "hidden": false
+              "hidden": true
             },
             {
               "id": "perros-master-dog-18kg-master-dog-senior-18kg-sabor-carne",
@@ -31,7 +31,7 @@
               "oldPrice": 32000,
               "colorClass": "",
               "typeBadges": [],
-              "hidden": false
+              "hidden": true
             },
             {
               "id": "perros-master-dog-18kg-master-dog-cachorro-18kg-todas-las-razas",
@@ -43,7 +43,7 @@
               "oldPrice": 32000,
               "colorClass": "",
               "typeBadges": [],
-              "hidden": false
+              "hidden": true
             },
             {
               "id": "perros-master-dog-18kg-master-dog-adulto-18kg-razas-pequenas",
@@ -55,7 +55,7 @@
               "oldPrice": 32000,
               "colorClass": "",
               "typeBadges": [],
-              "hidden": false
+              "hidden": true
             }
           ]
         },
