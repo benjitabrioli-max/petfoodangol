@@ -1570,6 +1570,18 @@
               "colorClass": "higiene",
               "typeBadges": [],
               "hidden": false
+            },
+            {
+              "id": "higiene-arena-sanitaria-arena-misifus-20kg-aglutinante-aroma-lavanda",
+              "name": "Arena misifus 20Kg",
+              "desc": "Aglutinante aroma lavanda",
+              "extra": "",
+              "unit": "Bolsa 20Kg",
+              "price": 14000,
+              "oldPrice": 16000,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": true
             }
           ]
         },
