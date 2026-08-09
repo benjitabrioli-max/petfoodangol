@@ -1,0 +1,1973 @@
+{
+  "sections": [
+    {
+      "id": "perros",
+      "emoji": "🐶",
+      "title": "Alimento seco para perros",
+      "subsections": [
+        {
+          "title": "Master Dog 18kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-master-dog-18kg-master-dog-cachorro-18kg-todas-las-razas",
+              "name": "Master Dog Cachorro 18kg",
+              "desc": "Todas las razas",
+              "extra": "Granel: $2.100 x kilo",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": 32000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-master-dog-18kg-master-dog-adulto-18kg-razas-pequenas",
+              "name": "Master Dog Adulto 18kg",
+              "desc": "Razas pequeñas",
+              "extra": "Granel: $2.100 x kilo",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": 32000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-master-dog-18kg-master-dog-adulto-18kg-sabor-pollo",
+              "name": "Master Dog Adulto 18kg",
+              "desc": "Sabor Pollo",
+              "extra": "",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": 32000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-master-dog-18kg-master-dog-senior-18kg-sabor-carne",
+              "name": "Master Dog Senior 18kg",
+              "desc": "Sabor Carne",
+              "extra": "",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": 32000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Master Dog 8kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-master-dog-8kg-master-dog-cachorro-8kg-razas-pequenas",
+              "name": "Master Dog Cachorro 8kg",
+              "desc": "Razas pequeñas",
+              "extra": "",
+              "unit": "bolsa 8kg",
+              "price": 17000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-master-dog-8kg-master-dog-adulto-8kg-razas-pequenas",
+              "name": "Master Dog Adulto 8kg",
+              "desc": "Razas pequeñas",
+              "extra": "",
+              "unit": "bolsa 8kg",
+              "price": 17000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-master-dog-8kg-master-dog-senior-8kg-sabor-carne",
+              "name": "Master Dog Senior 8kg",
+              "desc": "Sabor Carne",
+              "extra": "",
+              "unit": "bolsa 8kg",
+              "price": 17000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Champion Dog 18kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-champion-dog-18kg-champion-dog-cachorro-18kg-carne-y-pollo-lata-de-regalo",
+              "name": "Champion Dog Cachorro 18kg",
+              "desc": "Carne y Pollo · + lata de regalo",
+              "extra": "",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-champion-dog-18kg-champion-dog-adulto-razas-pequenas-18kg-carne-y-pollo-lata-de-regalo",
+              "name": "Champion Dog Adulto Razas Pequeñas 18kg",
+              "desc": "Carne y Pollo · + lata de regalo",
+              "extra": "",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-champion-dog-18kg-champion-dog-adulto-18kg-salmon-y-pollo-lata-de-regalo",
+              "name": "Champion Dog Adulto 18kg",
+              "desc": "Salmón y Pollo · + lata de regalo",
+              "extra": "",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-champion-dog-18kg-champion-dog-adulto-18kg-carne-y-pollo-lata-de-regalo",
+              "name": "Champion Dog Adulto 18kg",
+              "desc": "Carne y Pollo · + lata de regalo",
+              "extra": "",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-champion-dog-18kg-champion-dog-senior-18kg-carne-y-pollo-lata-de-regalo",
+              "name": "Champion Dog Senior 18kg",
+              "desc": "Carne y Pollo · + lata de regalo",
+              "extra": "",
+              "unit": "bolsa 18kg",
+              "price": 30000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Fit Fórmula",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-fit-formula-fit-formula-cachorro-10kg",
+              "name": "Fit Fórmula Cachorro 10kg",
+              "desc": "",
+              "extra": "Granel: $2.700 x kilo",
+              "unit": "bolsa 10kg",
+              "price": 24000,
+              "oldPrice": 26000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-fit-formula-fit-formula-r-p-10kg-razas-pequenas",
+              "name": "Fit Fórmula R/P 10kg",
+              "desc": "Razas pequeñas",
+              "extra": "Granel: $2.600 x kilo",
+              "unit": "bolsa 10kg",
+              "price": 23000,
+              "oldPrice": 25000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-fit-formula-fit-formula-adulto-20kg",
+              "name": "Fit Fórmula Adulto 20kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 38000,
+              "oldPrice": 43000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-fit-formula-fit-formula-senior-10kg-razas-pequenas",
+              "name": "Fit Fórmula Senior 10kg",
+              "desc": "Razas pequeñas",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 27000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-fit-formula-fit-formula-senior-20kg",
+              "name": "Fit Fórmula Senior 20kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 43000,
+              "oldPrice": 46000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Nomade",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-nomade-nomade-senior-15kg-razas-medianas-y-grandes",
+              "name": "Nomade Senior 15kg",
+              "desc": "Razas medianas y grandes",
+              "extra": "",
+              "unit": "bolsa 15kg",
+              "price": 32000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-nomade-nomade-adulto-20kg-razas-mediana-y-grande",
+              "name": "Nomade Adulto 20kg",
+              "desc": "Razas mediana y grande",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 36000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-nomade-nomade-cachorro-10kg-todas-las-razas",
+              "name": "Nomade Cachorro 10kg",
+              "desc": "Todas las razas",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 22500,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Cachupín y Sabrokan 25kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-cachupin-y-sabrokan-25kg-cachupin-cachorro-25kg-carne-y-leche",
+              "name": "Cachupín Cachorro 25kg",
+              "desc": "Carne y Leche",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 30000,
+              "oldPrice": 32000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-cachupin-y-sabrokan-25kg-cachupin-adulto-25kg-granel-1-400-x-kilo",
+              "name": "Cachupín Adulto 25kg",
+              "desc": "Granel: $1.400 x kilo",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 30000,
+              "oldPrice": 32000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-cachupin-y-sabrokan-25kg-sabrokan-adulto-25kg-sabor-carne",
+              "name": "Sabrokán Adulto 25kg",
+              "desc": "Sabor Carne",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 30000,
+              "oldPrice": 31500,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "XT21 / XT25",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-xt21-xt25-xt-25-cachorro-10kg",
+              "name": "XT-25 Cachorro 10kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 16000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-xt21-xt25-xt21-adulto-10kg",
+              "name": "XT21 Adulto 10kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 15000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-xt21-xt25-xt21-adulto-25kg",
+              "name": "XT21 Adulto 25kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 32000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Strong y Tyson",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-strong-y-tyson-strong-adulto-25kg-perro-adulto",
+              "name": "Strong Adulto 25kg",
+              "desc": "Perro adulto",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 38000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-strong-y-tyson-tyson-adulto-25kg-oferta-valida-hasta-16-08",
+              "name": "Tyson Adulto 25kg",
+              "desc": "Oferta válida hasta 16/08",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 25000,
+              "oldPrice": 26000,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Bokato",
+          "badge": null,
+          "products": [
+            {
+              "id": "perros-bokato-bokato-cachorro-10kg-todas-las-razas",
+              "name": "Bokato Cachorro 10kg",
+              "desc": "Todas las razas",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 27000,
+              "oldPrice": 31700,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-bokato-bokato-petit-10kg-super-premium-razas-pequenas",
+              "name": "Bokato Petit 10kg",
+              "desc": "Súper Premium · razas pequeñas",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 29000,
+              "oldPrice": 34500,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-bokato-bokato-senior-7kg-super-premium-razas-pequenas",
+              "name": "Bokato Senior 7kg",
+              "desc": "Súper Premium · razas pequeñas",
+              "extra": "",
+              "unit": "bolsa 7kg",
+              "price": 27000,
+              "oldPrice": 29900,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-bokato-bokato-senior-12kg-super-premium-razas-mediana-y-grande",
+              "name": "Bokato Senior 12kg",
+              "desc": "Súper Premium · razas mediana y grande",
+              "extra": "",
+              "unit": "bolsa 12kg",
+              "price": 44000,
+              "oldPrice": 49500,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-bokato-bokato-adulto-tradicion-20kg-razas-mediana-y-grande-premium",
+              "name": "Bokato Adulto Tradición 20kg",
+              "desc": "Razas mediana y grande premium",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 47000,
+              "oldPrice": 54900,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "perros-bokato-bokato-gold-20kg-super-premium",
+              "name": "Bokato Gold 20kg",
+              "desc": "Súper Premium",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 51000,
+              "oldPrice": 58900,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Prueba QA",
+          "badge": null,
+          "products": []
+        }
+      ]
+    },
+    {
+      "id": "gatos",
+      "emoji": "🐱",
+      "title": "Alimento seco para gatos",
+      "subsections": [
+        {
+          "title": "Whiskas 10kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-whiskas-10kg-whiskas-gatito-10kg-sabor-carne-y-leche-2-12-meses",
+              "name": "Whiskas Gatito 10kg",
+              "desc": "Sabor Carne y Leche · 2-12 meses",
+              "extra": "Granel: $2.900 x kilo",
+              "unit": "bolsa 10kg",
+              "price": 28000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-whiskas-10kg-whiskas-adulto-10kg-sabor-pollo-1-anos",
+              "name": "Whiskas Adulto 10kg",
+              "desc": "Sabor Pollo · 1+ años",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 28000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-whiskas-10kg-whiskas-adulto-10kg-sabor-carne-1-anos",
+              "name": "Whiskas Adulto 10kg",
+              "desc": "Sabor Carne · 1+ años",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 28000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-whiskas-10kg-whiskas-adulto-10kg-sabor-pescado-1-anos",
+              "name": "Whiskas Adulto 10kg",
+              "desc": "Sabor Pescado · 1+ años",
+              "extra": "Granel: $2.900 x kilo",
+              "unit": "bolsa 10kg",
+              "price": 28000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Cat Chow 19,5kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-cat-chow-19-5kg-cat-chow-gatito-19-5kg-granel-3-900-x-kilo",
+              "name": "Cat Chow Gatito 19,5kg",
+              "desc": "Granel: $3.900 x kilo",
+              "extra": "",
+              "unit": "bolsa 19,5kg",
+              "price": 65000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-cat-chow-19-5kg-cat-chow-adulto-19-5kg-gato-esterilizados",
+              "name": "Cat Chow Adulto 19,5kg",
+              "desc": "Gato esterilizados",
+              "extra": "Granel: $3.900 x kilo",
+              "unit": "bolsa 19,5kg",
+              "price": 65000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-cat-chow-19-5kg-cat-chow-adulto-19-5kg-delimix",
+              "name": "Cat Chow Adulto 19,5kg",
+              "desc": "Delimix",
+              "extra": "Granel: $3.900 x kilo",
+              "unit": "bolsa 19,5kg",
+              "price": 65000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-cat-chow-19-5kg-cat-chow-adulto-19-5kg-pescado",
+              "name": "Cat Chow Adulto 19,5kg",
+              "desc": "Pescado",
+              "extra": "Granel: $3.900 x kilo",
+              "unit": "bolsa 19,5kg",
+              "price": 65000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Master Cat 20kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-master-cat-20kg-master-cat-adulto-20kg-sabor-carne",
+              "name": "Master Cat Adulto 20kg",
+              "desc": "Sabor Carne",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 42000,
+              "oldPrice": 44000,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-master-cat-20kg-master-cat-adulto-mix-gourmet-20kg-sabor-salmon-carne-y-pollo",
+              "name": "Master Cat Adulto Mix Gourmet 20kg",
+              "desc": "Sabor Salmón, Carne y Pollo",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 42000,
+              "oldPrice": 44000,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-master-cat-20kg-master-cat-adulto-20kg-sabor-salmon",
+              "name": "Master Cat Adulto 20kg",
+              "desc": "Sabor Salmón",
+              "extra": "Granel: $2.500 x kilo",
+              "unit": "bolsa 20kg",
+              "price": 42000,
+              "oldPrice": 44000,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Champion Cat 20kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-champion-cat-20kg-champion-cat-gatito-20kg-pollo-y-leche",
+              "name": "Champion Cat Gatito 20kg",
+              "desc": "Pollo y Leche",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 42000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-champion-cat-20kg-champion-cat-adulto-20kg-pescado",
+              "name": "Champion Cat Adulto 20kg",
+              "desc": "Pescado",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 42000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-champion-cat-20kg-champion-cat-adulto-20kg-pollo",
+              "name": "Champion Cat Adulto 20kg",
+              "desc": "Pollo",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 42000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-champion-cat-20kg-champion-cat-adulto-20kg-carne",
+              "name": "Champion Cat Adulto 20kg",
+              "desc": "Carne",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 42000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Bokato Gato",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-bokato-gato-bokato-gato-7kg-super-premium",
+              "name": "Bokato Gato 7kg",
+              "desc": "Súper Premium",
+              "extra": "",
+              "unit": "bolsa 7kg",
+              "price": 34000,
+              "oldPrice": 38100,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Masko",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-masko-masko-gato-10kg-gatito-y-adulto",
+              "name": "Masko Gato 10kg",
+              "desc": "Gatito y Adulto",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 16000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-masko-masko-adulto-25kg-carne-y-cereales",
+              "name": "Masko Adulto 25kg",
+              "desc": "Carne y Cereales",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 30000,
+              "oldPrice": null,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-masko-masko-gato-25kg-gatito-y-adulto",
+              "name": "Masko Gato 25kg",
+              "desc": "Gatito y Adulto",
+              "extra": "",
+              "unit": "bolsa 25kg",
+              "price": 35000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Fit Fórmula Gato",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-fit-formula-gato-fit-formula-gato-10kg",
+              "name": "Fit Fórmula Gato 10kg",
+              "desc": "",
+              "extra": "Granel: $2.900 x kilo",
+              "unit": "bolsa 10kg",
+              "price": 27000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Nomade Gato",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-nomade-gato-nomade-gato-10kg",
+              "name": "Nomade Gato 10kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 27000,
+              "oldPrice": null,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Royal Canin 1,5kg",
+          "badge": null,
+          "products": [
+            {
+              "id": "gatos-royal-canin-1-5kg-royal-canin-urinary-s-o-1-5kg",
+              "name": "Royal Canin Urinary S/O 1,5kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 1,5kg",
+              "price": 19500,
+              "oldPrice": 21500,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-royal-canin-1-5kg-royal-canin-gato-urinary-care-1-5kg",
+              "name": "Royal Canin Gato Urinary Care 1,5kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 1,5kg",
+              "price": 19500,
+              "oldPrice": 21500,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "gatos-royal-canin-1-5kg-royal-canin-indoor-1-5kg",
+              "name": "Royal Canin Indoor 1,5kg",
+              "desc": "",
+              "extra": "",
+              "unit": "bolsa 1,5kg",
+              "price": 16500,
+              "oldPrice": 19500,
+              "colorClass": "gatos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "humedo",
+      "emoji": "🥫",
+      "title": "Alimento húmedo: sobres y latas",
+      "subsections": [
+        {
+          "title": "Whiskas Pouch",
+          "badge": "Sobre 85g",
+          "products": [
+            {
+              "id": "humedo-whiskas-pouch-whiskas-gatito-carne-display-12-unidades",
+              "name": "Whiskas Gatito Carne",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-whiskas-pouch-whiskas-adulto-pavo-display-12-unidades",
+              "name": "Whiskas Adulto Pavo",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-whiskas-pouch-whiskas-adulto-pollo-display-12-unidades",
+              "name": "Whiskas Adulto Pollo",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-whiskas-pouch-whiskas-adulto-sardina-display-12-unidades",
+              "name": "Whiskas Adulto Sardina",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-whiskas-pouch-whiskas-adulto-carne-display-12-unidades",
+              "name": "Whiskas Adulto Carne",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-whiskas-pouch-whiskas-adulto-salmon-display-12-unidades",
+              "name": "Whiskas Adulto Salmón",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Pedigree Pouch",
+          "badge": "Sobre",
+          "products": [
+            {
+              "id": "humedo-pedigree-pouch-pedigree-cachorro-carne-display-12-unidades",
+              "name": "Pedigree Cachorro Carne",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-pedigree-pouch-pedigree-adulto-r-p-pollo-display-12-unidades",
+              "name": "Pedigree Adulto R/P Pollo",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-pedigree-pouch-pedigree-adulto-r-p-carne-display-12-unidades",
+              "name": "Pedigree Adulto R/P Carne",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-pedigree-pouch-pedigree-adulto-pollo-display-12-unidades",
+              "name": "Pedigree Adulto Pollo",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-pedigree-pouch-pedigree-adulto-carne-display-12-unidades",
+              "name": "Pedigree Adulto Carne",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-pedigree-pouch-pedigree-senior-carne-display-12-unidades",
+              "name": "Pedigree Senior Carne",
+              "desc": "Display 12 unidades",
+              "extra": "",
+              "unit": "c/u",
+              "price": 7200,
+              "oldPrice": null,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Sobre"
+              ],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Latas Champion 315g",
+          "badge": "Lata",
+          "products": [
+            {
+              "id": "humedo-latas-champion-315g-lata-champion-cat-315g-sabor-pescado",
+              "name": "Lata Champion Cat 315g",
+              "desc": "Sabor Pescado",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1400,
+              "oldPrice": 1500,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Lata"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-latas-champion-315g-lata-champion-dog-315g-adulto-carne",
+              "name": "Lata Champion Dog 315g",
+              "desc": "Adulto Carne",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1400,
+              "oldPrice": 1500,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Lata"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-latas-champion-315g-lata-champion-dog-315g-cachorro-pollo",
+              "name": "Lata Champion Dog 315g",
+              "desc": "Cachorro Pollo",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1400,
+              "oldPrice": 1500,
+              "colorClass": "humedo",
+              "typeBadges": [
+                "Lata"
+              ],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Lata Fit Fórmula Gato Gourmet 80g",
+          "badge": "Lata",
+          "products": [
+            {
+              "id": "humedo-lata-fit-formula-gato-gourmet-80g-fit-formula-gato-gourmet-atun-y-camaron",
+              "name": "Fit Fórmula Gato Gourmet",
+              "desc": "Atún y camarón",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1400,
+              "oldPrice": 1500,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Lata"
+              ],
+              "hidden": false
+            },
+            {
+              "id": "humedo-lata-fit-formula-gato-gourmet-80g-fit-formula-gato-gourmet-atun-y-palitos-de-cangrejo",
+              "name": "Fit Fórmula Gato Gourmet",
+              "desc": "Atún y palitos de cangrejo",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1400,
+              "oldPrice": 1500,
+              "colorClass": "gatos humedo",
+              "typeBadges": [
+                "Lata"
+              ],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snacks",
+      "emoji": "🍬",
+      "title": "Snacks y premios",
+      "subsections": [
+        {
+          "title": "Snack Fit Fórmula 400g",
+          "badge": null,
+          "products": [
+            {
+              "id": "snacks-snack-fit-formula-400g-snack-fit-formula-salchicha-de-pato",
+              "name": "Snack Fit Fórmula",
+              "desc": "Salchicha de pato",
+              "extra": "",
+              "unit": "400g",
+              "price": 10000,
+              "oldPrice": null,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-snack-fit-formula-400g-snack-fit-formula-trutro-de-pollo",
+              "name": "Snack Fit Fórmula",
+              "desc": "Trutro de pollo",
+              "extra": "",
+              "unit": "400g",
+              "price": 10000,
+              "oldPrice": null,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-snack-fit-formula-400g-snack-fit-formula-espiral-de-salmon",
+              "name": "Snack Fit Fórmula",
+              "desc": "Espiral de salmón",
+              "extra": "",
+              "unit": "400g",
+              "price": 10000,
+              "oldPrice": null,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-snack-fit-formula-400g-snack-fit-formula-costillitas-de-cordero",
+              "name": "Snack Fit Fórmula",
+              "desc": "Costillitas de cordero",
+              "extra": "",
+              "unit": "400g",
+              "price": 10000,
+              "oldPrice": null,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Otros snacks",
+          "badge": null,
+          "products": [
+            {
+              "id": "snacks-otros-snacks-dentastix-razas-grandes-7-unidades",
+              "name": "Dentastix",
+              "desc": "Razas grandes · 7 unidades",
+              "extra": "",
+              "unit": "pack",
+              "price": 3000,
+              "oldPrice": null,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-otros-snacks-snack-animal-planet-trozos-de-salmon-con-pollo-65g",
+              "name": "Snack Animal Planet",
+              "desc": "Trozos de salmón con pollo · 65g",
+              "extra": "",
+              "unit": "unidad",
+              "price": 2500,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-otros-snacks-snack-animal-planet-trozos-de-vacuno-con-pollo-100g",
+              "name": "Snack Animal Planet",
+              "desc": "Trozos de vacuno con pollo · 100g",
+              "extra": "",
+              "unit": "unidad",
+              "price": 2500,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-otros-snacks-snack-femur-de-cerdo-wild-bites",
+              "name": "Snack Fémur de Cerdo",
+              "desc": "Wild Bites",
+              "extra": "",
+              "unit": "unidad",
+              "price": 3000,
+              "oldPrice": null,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Churu (perro y gato)",
+          "badge": "Display 4un",
+          "products": [
+            {
+              "id": "snacks-churu-perro-y-gato-churu-atun-con-almeja",
+              "name": "Churu Atún con Almeja",
+              "desc": "",
+              "extra": "",
+              "unit": "c/u",
+              "price": 2200,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-churu-perro-y-gato-churu-atun-con-camaron",
+              "name": "Churu Atún con Camarón",
+              "desc": "",
+              "extra": "",
+              "unit": "c/u",
+              "price": 2200,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-churu-perro-y-gato-churu-pollo-con-salmon",
+              "name": "Churu Pollo con Salmón",
+              "desc": "",
+              "extra": "",
+              "unit": "c/u",
+              "price": 2200,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-churu-perro-y-gato-churu-pollo-con-atun",
+              "name": "Churu Pollo con Atún",
+              "desc": "",
+              "extra": "",
+              "unit": "c/u",
+              "price": 2200,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-churu-perro-y-gato-churu-pollo",
+              "name": "Churu Pollo",
+              "desc": "",
+              "extra": "",
+              "unit": "c/u",
+              "price": 2200,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "antiparasitarios",
+      "emoji": "💊",
+      "title": "Antiparasitarios",
+      "subsections": [
+        {
+          "title": "Nexgard Perros",
+          "badge": null,
+          "products": [
+            {
+              "id": "antiparasitarios-nexgard-perros-nexgard-2-4kg-3-comprimidos",
+              "name": "Nexgard 2 - 4kg",
+              "desc": "3 comprimidos",
+              "extra": "",
+              "unit": "caja",
+              "price": 19000,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-nexgard-perros-nexgard-4-10kg-3-comprimidos",
+              "name": "Nexgard 4 - 10kg",
+              "desc": "3 comprimidos",
+              "extra": "",
+              "unit": "caja",
+              "price": 21000,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-nexgard-perros-nexgard-10-25kg-3-comprimidos",
+              "name": "Nexgard 10 - 25kg",
+              "desc": "3 comprimidos",
+              "extra": "",
+              "unit": "caja",
+              "price": 23000,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-nexgard-perros-nexgard-25-50kg-3-comprimidos",
+              "name": "Nexgard 25 - 50kg",
+              "desc": "3 comprimidos",
+              "extra": "",
+              "unit": "caja",
+              "price": 33000,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-nexgard-perros-pipeta-sinpul-2ml-elimina-pulgas-y-garrapatas",
+              "name": "Pipeta Sinpul 2ml",
+              "desc": "Elimina pulgas y garrapatas",
+              "extra": "",
+              "unit": "unidad",
+              "price": 3000,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Pipetas Gato",
+          "badge": null,
+          "products": [
+            {
+              "id": "antiparasitarios-pipetas-gato-pipeta-gato-fiprodrag-antiparasitario-externo",
+              "name": "Pipeta Gato Fiprodrag",
+              "desc": "Antiparasitario externo",
+              "extra": "",
+              "unit": "unidad",
+              "price": 5000,
+              "oldPrice": 7000,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-pipetas-gato-nexgard-combo-pipeta-gato-antiparasitario-interno-y-externo-2-5-7-5kg",
+              "name": "Nexgard Combo Pipeta Gato",
+              "desc": "Antiparasitario interno y externo · 2,5-7,5kg",
+              "extra": "",
+              "unit": "unidad",
+              "price": 15000,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Collares y shampoo antipulgas",
+          "badge": null,
+          "products": [
+            {
+              "id": "antiparasitarios-collares-y-shampoo-antipulgas-collar-gato-sinpulkill-controla-pulgas-x-4-meses",
+              "name": "Collar Gato Sinpulkill",
+              "desc": "Controla pulgas x 4 meses",
+              "extra": "",
+              "unit": "unidad",
+              "price": 7500,
+              "oldPrice": 8000,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-collares-y-shampoo-antipulgas-collar-perro-sinpulkill-pulgas-x-4-meses-garrapatas-x-3-meses",
+              "name": "Collar Perro Sinpulkill",
+              "desc": "Pulgas x 4 meses · garrapatas x 3 meses",
+              "extra": "",
+              "unit": "unidad",
+              "price": 7500,
+              "oldPrice": 8000,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-collares-y-shampoo-antipulgas-shampoo-dorazel-plus-300ml-elimina-pulgas-y-garrapatas",
+              "name": "Shampoo Dorazel Plus 300ml",
+              "desc": "Elimina pulgas y garrapatas",
+              "extra": "",
+              "unit": "frasco",
+              "price": 5000,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Antiparasitario Interno",
+          "badge": null,
+          "products": [
+            {
+              "id": "antiparasitarios-antiparasitario-interno-mebermic-comprimido-antiparasitario-interno-hasta-10kg",
+              "name": "Mebermic Comprimido",
+              "desc": "Antiparasitario interno · hasta 10kg",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1200,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-antiparasitario-interno-invermic-gato-gotas-10ml-antiparasitario-interno",
+              "name": "Invermic Gato Gotas 10ml",
+              "desc": "Antiparasitario interno",
+              "extra": "",
+              "unit": "frasco",
+              "price": 2500,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "antiparasitarios-antiparasitario-interno-invermic-perro-gotas-10ml-antiparasitario-interno",
+              "name": "Invermic Perro Gotas 10ml",
+              "desc": "Antiparasitario interno",
+              "extra": "",
+              "unit": "frasco",
+              "price": 2500,
+              "oldPrice": null,
+              "colorClass": "antiparasitarios",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "higiene",
+      "emoji": "🧴",
+      "title": "Higiene y aseo",
+      "subsections": [
+        {
+          "title": "Shampoo Canish y Tidy",
+          "badge": null,
+          "products": [
+            {
+              "id": "higiene-shampoo-canish-y-tidy-shampoo-hipoalergenico-390ml",
+              "name": "Shampoo Hipoalergénico 390ml",
+              "desc": "",
+              "extra": "",
+              "unit": "frasco",
+              "price": 4000,
+              "oldPrice": null,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-shampoo-canish-y-tidy-shampoo-extra-brillo-390ml",
+              "name": "Shampoo Extra Brillo 390ml",
+              "desc": "",
+              "extra": "",
+              "unit": "frasco",
+              "price": 4000,
+              "oldPrice": null,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-shampoo-canish-y-tidy-shampoo-balsamico-390ml",
+              "name": "Shampoo Balsámico 390ml",
+              "desc": "",
+              "extra": "",
+              "unit": "frasco",
+              "price": 4000,
+              "oldPrice": null,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Arena Sanitaria",
+          "badge": null,
+          "products": [
+            {
+              "id": "higiene-arena-sanitaria-arena-turbo-clean-20kg-aglutinante-aroma-lavanda",
+              "name": "Arena Turbo Clean 20kg",
+              "desc": "Aglutinante · aroma lavanda",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 18000,
+              "oldPrice": 20000,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-arena-sanitaria-arena-turbo-clean-10kg-aglutinante-aroma-lavanda",
+              "name": "Arena Turbo Clean 10kg",
+              "desc": "Aglutinante · aroma lavanda",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 10000,
+              "oldPrice": 12000,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-arena-sanitaria-arena-turbo-clean-4kg-aglutinante-aroma-lavanda",
+              "name": "Arena Turbo Clean 4kg",
+              "desc": "Aglutinante · aroma lavanda",
+              "extra": "",
+              "unit": "bolsa 4kg",
+              "price": 4500,
+              "oldPrice": 5000,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-arena-sanitaria-arena-misifus-20kg-aglutinante-aroma-cafe-moka",
+              "name": "Arena Mísifus 20kg",
+              "desc": "Aglutinante · aroma café moka",
+              "extra": "",
+              "unit": "bolsa 20kg",
+              "price": 14000,
+              "oldPrice": 16000,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-arena-sanitaria-arena-fit-formula-10kg-aglomerante-aroma-lavanda",
+              "name": "Arena Fit Fórmula 10kg",
+              "desc": "Aglomerante · aroma lavanda",
+              "extra": "",
+              "unit": "bolsa 10kg",
+              "price": 11000,
+              "oldPrice": 13000,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Arena TopK9",
+          "badge": null,
+          "products": [
+            {
+              "id": "higiene-arena-topk9-arena-topk9-ecologica-2kg-aroma-lavanda",
+              "name": "Arena TopK9 Ecológica 2kg",
+              "desc": "Aroma lavanda",
+              "extra": "",
+              "unit": "bolsa 2kg",
+              "price": 3000,
+              "oldPrice": null,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-arena-topk9-arena-topk9-2kg-aroma-natural-repelente-de-pulgas",
+              "name": "Arena TopK9 2kg",
+              "desc": "Aroma natural repelente de pulgas",
+              "extra": "",
+              "unit": "bolsa 2kg",
+              "price": 3300,
+              "oldPrice": null,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "higiene-arena-topk9-arena-topk9-1-6kg-cristal-fino",
+              "name": "Arena TopK9 1,6kg",
+              "desc": "Cristal fino",
+              "extra": "",
+              "unit": "bolsa 1,6kg",
+              "price": 6000,
+              "oldPrice": null,
+              "colorClass": "higiene",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accesorios",
+      "emoji": "🍽️",
+      "title": "Accesorios",
+      "subsections": [
+        {
+          "title": null,
+          "badge": null,
+          "products": [
+            {
+              "id": "accesorios-plato-chico-plato-cuadrado-n-1",
+              "name": "Plato chico",
+              "desc": "Plato cuadrado N°1",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1000,
+              "oldPrice": null,
+              "colorClass": "accesorios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "accesorios-plato-mediano-plato-cuadrado",
+              "name": "Plato mediano",
+              "desc": "Plato cuadrado",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1500,
+              "oldPrice": null,
+              "colorClass": "accesorios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "accesorios-plato-grande-plato-cuadrado",
+              "name": "Plato grande",
+              "desc": "Plato cuadrado",
+              "extra": "",
+              "unit": "unidad",
+              "price": 2000,
+              "oldPrice": null,
+              "colorClass": "accesorios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "accesorios-poruna-chica",
+              "name": "Poruña chica",
+              "desc": "",
+              "extra": "",
+              "unit": "unidad",
+              "price": 500,
+              "oldPrice": null,
+              "colorClass": "accesorios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "accesorios-poruna-grande",
+              "name": "Poruña grande",
+              "desc": "",
+              "extra": "",
+              "unit": "unidad",
+              "price": 1000,
+              "oldPrice": null,
+              "colorClass": "accesorios",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "accesorios-arenero-top-k9-clasico-incluye-pala-y-plato-40x29x14cm",
+              "name": "Arenero Top-K9 Clásico",
+              "desc": "Incluye pala y plato · 40x29x14cm",
+              "extra": "",
+              "unit": "unidad",
+              "price": 8000,
+              "oldPrice": 10000,
+              "colorClass": "accesorios",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hogar",
+      "emoji": "🏠",
+      "title": "Hogar y kiosco",
+      "subsections": [
+        {
+          "title": "Papel higiénico",
+          "badge": null,
+          "products": [
+            {
+              "id": "hogar-papel-higienico-papel-higienico-noble-22-metros-d-h-60-rollos-9-85-el-metro",
+              "name": "Papel Higiénico Noble",
+              "desc": "22 metros D/H · 60 rollos · $9,85 el metro",
+              "extra": "",
+              "unit": "pack",
+              "price": 13000,
+              "oldPrice": 14000,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-papel-higienico-papel-higienico-swan-20-metros-d-h-48-rollos-11-46-el-metro",
+              "name": "Papel Higiénico Swan",
+              "desc": "20 metros D/H · 48 rollos · $11,46 el metro",
+              "extra": "",
+              "unit": "pack",
+              "price": 11000,
+              "oldPrice": 11500,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-papel-higienico-papel-higienico-swan-50-metros-d-h-32-rollos-doble-hoja-11-57-el-metro",
+              "name": "Papel Higiénico Swan",
+              "desc": "50 metros D/H · 32 rollos doble hoja · $11,57 el metro",
+              "extra": "",
+              "unit": "pack",
+              "price": 18500,
+              "oldPrice": null,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-papel-higienico-papel-higienico-ovella-50-metros-d-h-32-rollos-11-25-el-metro",
+              "name": "Papel Higiénico Ovella",
+              "desc": "50 metros D/H · 32 rollos · $11,25 el metro",
+              "extra": "",
+              "unit": "pack",
+              "price": 18000,
+              "oldPrice": null,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-papel-higienico-papel-higienico-confort-22-metros-d-h-48-rollos-11-84-el-metro",
+              "name": "Papel Higiénico Confort",
+              "desc": "22 metros D/H · 48 rollos · $11,84 el metro",
+              "extra": "",
+              "unit": "pack",
+              "price": 12500,
+              "oldPrice": null,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-papel-higienico-papel-higienico-elite-50-metros-d-h-32-rollos-12-82-el-metro",
+              "name": "Papel Higiénico Elite",
+              "desc": "50 metros D/H · 32 rollos · $12,82 el metro",
+              "extra": "",
+              "unit": "pack",
+              "price": 20500,
+              "oldPrice": null,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-papel-higienico-toalla-nova-gigante-70-metros-d-h",
+              "name": "Toalla Nova Gigante",
+              "desc": "70 metros D/H",
+              "extra": "",
+              "unit": "1 unidad",
+              "price": 2800,
+              "oldPrice": null,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-papel-higienico-toalla-nova-gigante-70-metros-d-h-2-600-c-u",
+              "name": "Toalla Nova Gigante",
+              "desc": "70 metros D/H · $2.600 c/u",
+              "extra": "",
+              "unit": "pack 8un",
+              "price": 20800,
+              "oldPrice": null,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Aseo y varios",
+          "badge": null,
+          "products": [
+            {
+              "id": "hogar-aseo-y-varios-detergente-ariel-liquido-downy-concentrado",
+              "name": "Detergente Ariel Líquido Downy",
+              "desc": "Concentrado",
+              "extra": "",
+              "unit": "unidad",
+              "price": 6900,
+              "oldPrice": 7900,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-aseo-y-varios-papelillos-ronson-premium-quality-display-25-librillos-de-50-hojas",
+              "name": "Papelillos Ronson Premium Quality",
+              "desc": "Display 25 librillos de 50 hojas",
+              "extra": "",
+              "unit": "display",
+              "price": 7000,
+              "oldPrice": 10000,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-aseo-y-varios-encendedor-ronson-display-20un-245-c-u",
+              "name": "Encendedor Ronson",
+              "desc": "Display 20un · $245 c/u",
+              "extra": "",
+              "unit": "display",
+              "price": 4900,
+              "oldPrice": null,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        },
+        {
+          "title": "Cuidado adulto mayor",
+          "badge": null,
+          "products": [
+            {
+              "id": "hogar-cuidado-adulto-mayor-pants-para-adulto-talla-g-xg-30-unidades",
+              "name": "Pants para Adulto",
+              "desc": "Talla G/XG · 30 unidades",
+              "extra": "",
+              "unit": "pack",
+              "price": 17000,
+              "oldPrice": 18000,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "hogar-cuidado-adulto-mayor-panales-para-adulto-premium-talla-g-20-unidades",
+              "name": "Pañales para Adulto Premium",
+              "desc": "Talla G · 20 unidades",
+              "extra": "",
+              "unit": "pack",
+              "price": 13000,
+              "oldPrice": 14000,
+              "colorClass": "hogar",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palta",
+      "emoji": "🥑",
+      "title": "Palta",
+      "subsections": [
+        {
+          "title": null,
+          "badge": null,
+          "products": [
+            {
+              "id": "palta-palta-hass-peruana-por-kilo",
+              "name": "Palta Hass Peruana",
+              "desc": "Por kilo",
+              "extra": "",
+              "unit": "por kg",
+              "price": 3000,
+              "oldPrice": null,
+              "colorClass": "palta",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huevos",
+      "emoji": "🥚",
+      "title": "Huevos",
+      "subsections": [
+        {
+          "title": null,
+          "badge": null,
+          "products": [
+            {
+              "id": "huevos-huevo-extra-blanco-bandeja-30-unidades",
+              "name": "Huevo Extra Blanco",
+              "desc": "Bandeja 30 unidades",
+              "extra": "",
+              "unit": "bandeja",
+              "price": 6000,
+              "oldPrice": null,
+              "colorClass": "huevos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "huevos-huevo-extra-blanco-caja-180-unidades",
+              "name": "Huevo Extra Blanco",
+              "desc": "Caja 180 unidades",
+              "extra": "",
+              "unit": "caja",
+              "price": 34000,
+              "oldPrice": null,
+              "colorClass": "huevos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "huevos-huevo-primera-blanco-180-unidades",
+              "name": "Huevo Primera Blanco",
+              "desc": "180 unidades",
+              "extra": "",
+              "unit": "caja",
+              "price": 29000,
+              "oldPrice": null,
+              "colorClass": "huevos",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "huevos-huevo-segunda-blanco-180-unidades",
+              "name": "Huevo Segunda Blanco",
+              "desc": "180 unidades",
+              "extra": "",
+              "unit": "caja",
+              "price": 24000,
+              "oldPrice": null,
+              "colorClass": "huevos",
+              "typeBadges": [],
+              "hidden": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

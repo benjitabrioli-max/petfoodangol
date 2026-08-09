@@ -1,0 +1,88 @@
+
+
+<footer>
+  PetFoodAngol · Argentina 1916 · Despacho a domicilio en todo Angol
+  <a class="foot-phone" href="tel:90957472">📞 90957472</a>
+</footer>
+
+<script>
+(function(){
+  function normalize(str){
+    return str.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+
+  var main = document.querySelector('main');
+  var searchInput = document.getElementById('searchInput');
+  var clearBtn = document.getElementById('clearSearch');
+  var noResults = document.getElementById('noResults');
+
+  function runSearch(){
+    var q = normalize(searchInput.value.trim());
+    clearBtn.style.display = q ? 'block' : 'none';
+
+    var children = Array.prototype.slice.call(main.children);
+    var anyVisible = false;
+    var i = 0;
+
+    while (i < children.length){
+      var el = children[i];
+      if (el.tagName === 'H2'){
+        var j = i + 1;
+        var sectionHasMatch = (q === '');
+        var blockEls = [];
+        while (j < children.length && children[j].tagName !== 'H2'){
+          blockEls.push(children[j]);
+          j++;
+        }
+        var k = 0;
+        while (k < blockEls.length){
+          var h3 = null;
+          if (blockEls[k].tagName === 'H3'){
+            h3 = blockEls[k];
+            k++;
+          }
+          var productsDiv = blockEls[k];
+          k++;
+          if (!productsDiv) break;
+          var cards = Array.prototype.slice.call(productsDiv.querySelectorAll('.card'));
+          var subHasMatch = (q === '');
+          cards.forEach(function(card){
+            var text = normalize(card.textContent);
+            var match = (q === '') || text.indexOf(q) !== -1;
+            card.style.display = match ? '' : 'none';
+            if (match) subHasMatch = true;
+          });
+          if (h3) h3.style.display = subHasMatch ? '' : 'none';
+          productsDiv.style.display = subHasMatch ? '' : 'none';
+          if (subHasMatch) sectionHasMatch = true;
+        }
+        el.style.display = sectionHasMatch ? '' : 'none';
+        if (sectionHasMatch) anyVisible = true;
+        i = j;
+      } else {
+        i++;
+      }
+    }
+
+    noResults.style.display = (q !== '' && !anyVisible) ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', runSearch);
+  clearBtn.addEventListener('click', function(){
+    searchInput.value = '';
+    runSearch();
+    searchInput.focus();
+  });
+  document.querySelectorAll('.quick-nav-links a').forEach(function(link){
+    link.addEventListener('click', function(){
+      if (searchInput.value){
+        searchInput.value = '';
+        runSearch();
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
