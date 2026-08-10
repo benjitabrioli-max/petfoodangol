@@ -1987,7 +1987,7 @@
               "oldPrice": null,
               "colorClass": "huevos",
               "typeBadges": [],
-              "hidden": false
+              "hidden": true
             }
           ]
         }
