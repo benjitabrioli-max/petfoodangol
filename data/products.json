@@ -1222,18 +1222,6 @@
               "hidden": false
             },
             {
-              "id": "snacks-churu-perro-y-gato-churu-atun-con-almeja",
-              "name": "Churu Atún con Almeja",
-              "desc": "Gato",
-              "extra": "",
-              "unit": "c/u",
-              "price": 2200,
-              "oldPrice": 2990,
-              "colorClass": "snacks",
-              "typeBadges": [],
-              "hidden": false
-            },
-            {
               "id": "snacks-churu-perro-y-gato-churu-atun-con-camaron",
               "name": "Churu Atún con Camarón",
               "desc": "Gato",
@@ -1261,6 +1249,18 @@
               "id": "snacks-churu-perro-y-gato-churu-pollo-con-atun",
               "name": "Churu Pollo con Atún",
               "desc": "Perro",
+              "extra": "",
+              "unit": "Display 4 unidades",
+              "price": 2200,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-churu-perro-y-gato-churu-atun-con-almeja",
+              "name": "Churu Atún con Almeja",
+              "desc": "Gato",
               "extra": "",
               "unit": "Display 4 unidades",
               "price": 2200,
