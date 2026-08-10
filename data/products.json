@@ -63,8 +63,8 @@
               "desc": "Sabor Carne",
               "extra": "2.100 x kilo",
               "unit": "Bolsa 18kg",
-              "price": 30,
-              "oldPrice": 32,
+              "price": 30000,
+              "oldPrice": 32000,
               "colorClass": "",
               "typeBadges": [],
               "hidden": false
