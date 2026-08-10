@@ -1914,7 +1914,7 @@
               "oldPrice": null,
               "colorClass": "palta",
               "typeBadges": [],
-              "hidden": false
+              "hidden": true
             }
           ]
         }
