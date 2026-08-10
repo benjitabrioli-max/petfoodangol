@@ -34,9 +34,9 @@
               "hidden": false
             },
             {
-              "id": "perros-master-dog-18kg-master-dog-cachorro-18kg-todas-las-razas",
-              "name": "Master Dog Cachorro 18kg",
-              "desc": "Todas las razas",
+              "id": "perros-master-dog-18kg-master-dog-adulto-18kg-razas-pequenas",
+              "name": "Master Dog Adulto 18kg",
+              "desc": "Razas pequeñas",
               "extra": "Granel: $2.100 x kilo",
               "unit": "bolsa 18kg",
               "price": 30000,
@@ -46,10 +46,10 @@
               "hidden": false
             },
             {
-              "id": "perros-master-dog-18kg-master-dog-adulto-18kg-razas-pequenas",
-              "name": "Master Dog Adulto 18kg",
-              "desc": "Razas pequeñas",
-              "extra": "Granel: $2.100 x kilo",
+              "id": "perros-master-dog-18kg-master-dog-cachorro-18kg-todas-las-razas",
+              "name": "Master Dog Cachorro 18kg",
+              "desc": "Todas las razas",
+              "extra": "Granel $2.100 x kilo",
               "unit": "bolsa 18kg",
               "price": 30000,
               "oldPrice": 32000,
