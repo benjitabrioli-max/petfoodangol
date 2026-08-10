@@ -1210,18 +1210,6 @@
           "badge": "Display 4un",
           "products": [
             {
-              "id": "snacks-churu-perro-y-gato-churu-pollo",
-              "name": "Churu Pollo",
-              "desc": "",
-              "extra": "",
-              "unit": "c/u",
-              "price": 2200,
-              "oldPrice": 2990,
-              "colorClass": "snacks",
-              "typeBadges": [],
-              "hidden": false
-            },
-            {
               "id": "snacks-churu-perro-y-gato-churu-atun-con-camaron",
               "name": "Churu Atún con Camarón",
               "desc": "Gato",
@@ -1263,6 +1251,18 @@
               "desc": "Gato",
               "extra": "",
               "unit": "Display 4 unidades",
+              "price": 2200,
+              "oldPrice": 2990,
+              "colorClass": "snacks",
+              "typeBadges": [],
+              "hidden": false
+            },
+            {
+              "id": "snacks-churu-perro-y-gato-churu-pollo",
+              "name": "Churu Pollo",
+              "desc": "Perro",
+              "extra": "",
+              "unit": "c/u",
               "price": 2200,
               "oldPrice": 2990,
               "colorClass": "snacks",
