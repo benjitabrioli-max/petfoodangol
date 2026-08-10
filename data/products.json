@@ -56,6 +56,18 @@
               "colorClass": "",
               "typeBadges": [],
               "hidden": false
+            },
+            {
+              "id": "perros-master-dog-18kg-master-dog-adulto-18kg-sabor-carne",
+              "name": "Master Dog Adulto 18kg",
+              "desc": "Sabor Carne",
+              "extra": "2.100 x kilo",
+              "unit": "Bolsa 18kg",
+              "price": 30,
+              "oldPrice": 32,
+              "colorClass": "",
+              "typeBadges": [],
+              "hidden": false
             }
           ]
         },
